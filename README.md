@@ -1,6 +1,6 @@
 `Status playground - Disclaimer: I'm learning Vue. That said - Feel free to use it for testing and learning purposes.`
 
-_See [another version with import and export](#import-and-export-database)_
+_See [another version with import and export](#another-version-with-import-and-export)_
 
 ## Intro
 
@@ -8,8 +8,8 @@ DevNote is a `PWA` (Progressive Web App) for creating notes that uses the local 
 
 This version use `Dexie Cloud` for logging with OTP and as a sync engine. The data as far as i understand is NOT encrypted but [can be done.](https://dexie.org/cloud/docs/authentication#encrypting-your-offline-data).
 
-[![Video](https://raw.githubusercontent.com/santuan/devnote-cloud/refs/heads/main/public/screen-demo.png)](https://raw.githubusercontent.com/santuan/devnote-cloud/refs/heads/main/public/screen-demo.mp4)
 
+![A screen shot of the app](https://github.com/santuan/devnote-cloud/blob/main/public/screen-demo.png)
 
 <a href="https://stackblitz.com/~/github.com/santuan/devnote-cloud">
   <img
