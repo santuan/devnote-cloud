@@ -36,7 +36,6 @@ const { t } = useI18n()
             'animate-pulse': distance > 150 && !isRefreshing,
           }"
         />
-        s
         <span class="font-bold" v-if="!isRefreshing">
           {{ t("verb.open") }} {{ t("commandBar.title") }}
         </span>

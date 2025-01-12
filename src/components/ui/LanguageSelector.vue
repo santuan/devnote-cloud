@@ -24,7 +24,7 @@ function setLocale(lang) {
     <DropdownMenuTrigger
       class="flex items-center justify-center border interactive border-secondary hover:bg-secondary/80 bg-background size-8"
     >
-      <Tooltip :name="t('settings.language')" >
+      <Tooltip :name="t('settings.language')">
         <span class="size-8 flex justify-center items-center">
           <Languages class="size-4" />
         </span>

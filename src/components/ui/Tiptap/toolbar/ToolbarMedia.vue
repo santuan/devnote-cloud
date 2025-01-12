@@ -37,7 +37,7 @@ const { setVideo } = useSetVideo(editor)
       <DropdownMenuTrigger
         class="data-[state=open]:!bg-primary data-[state=open]:text-primary-foreground relative"
       >
-        <Tooltip :name="`${t('verb.add')} ${t('toolbar.image')}`">
+        <Tooltip :name="`${t('verb.add')} ${t('toolbar.image')}`" side="bottom">
           <span
             class="flex items-center justify-center outline-none interactive size-8 focus-visible:border-primary border-secondary"
           >
@@ -47,9 +47,7 @@ const { setVideo } = useSetVideo(editor)
         </Tooltip>
       </DropdownMenuTrigger>
     </ToolbarButton>
-    <DropdownMenuContent
-      class="z-50 grid w-40 text-xs gap-1 bg-background border border-primary"
-    >
+    <DropdownMenuContent class="z-50 grid w-40 text-xs gap-1 bg-background border border-primary">
       <DropdownMenuItem
         as-child
         v-show="!settings.media_base64"

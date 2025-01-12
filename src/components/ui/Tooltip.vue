@@ -38,15 +38,17 @@ const props = defineProps({
 
 <template>
   <TooltipProvider>
-    <TooltipRoot :delay-duration="400" ignore-non-keyboard-focus>
+    <TooltipRoot ignore-non-keyboard-focus>
       <TooltipTrigger as-child>
         <slot />
       </TooltipTrigger>
-      <TooltipPortal>
+      <TooltipPortal defer>
         <TooltipContent
           class="print:!hidden ring-primary ring-1 select-none max-w-80 min-h-7 bg-secondary px-2.5 py-1.5 flex gap-2 items-center justify-center"
           :class="props.shortcut ? 'flex-col' : ' '"
-          :side-offset="6"
+          :side-offset="8"
+          :side="props.side"
+          :align="props.align"
         >
           <span
             v-show="props.name"
@@ -55,7 +57,7 @@ const props = defineProps({
           >
           <kbd
             v-show="props.shortcut"
-            class="pointer-events-none uppercase inline-flex h-5 select-none items-center gap-1 rounded px-1.5 font-mono text-[11px] text-secondary-foreground font-extrabold "
+            class="pointer-events-none uppercase inline-flex h-5 select-none items-center gap-1 rounded px-1.5 font-mono text-[10px] text-secondary-foreground font-extrabold"
           >
             {{ props.shortcut }}
           </kbd>

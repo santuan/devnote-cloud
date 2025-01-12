@@ -1,4 +1,4 @@
-<script setup >
+<script setup lang="ts">
 import { CircleOff } from "lucide-vue-next"
 import { useDatabaseStore } from "@/stores/database"
 import { useI18n } from "vue-i18n"
@@ -17,7 +17,6 @@ const props = defineProps({
 function toggleCheck(item, isChecked) {
   db_store.change_document_checked(item, isChecked)
 }
-
 </script>
 
 <template>

@@ -12,6 +12,7 @@ import Italic from "@tiptap/extension-italic"
 import Strike from "@tiptap/extension-strike"
 import Bold from "@tiptap/extension-bold"
 import BulletList from "@tiptap/extension-bullet-list"
+import OrderedList from "@tiptap/extension-ordered-list"
 import Underline from "@tiptap/extension-underline"
 import { Color } from "@tiptap/extension-color"
 import ListItem from "@tiptap/extension-list-item"
@@ -72,6 +73,7 @@ onMounted(() => {
       Document,
       Blockquote,
       BulletList,
+      OrderedList,
       ListItem,
       Heading,
       HardBreak,
@@ -250,10 +252,9 @@ onBeforeUnmount(() => {
 
 .ScrollAreaEditor {
   @apply w-full scrollbar-none border-0 print:!h-full print:!max-h-none overflow-x-hidden print:!overflow-y-auto;
-  
 
   &.is-editable {
-    @apply max-h-[calc(100dvh-3rem)] bg-secondary/30 ;
+    @apply max-h-[calc(100dvh-3rem)] bg-secondary/30;
 
     .tiptap td,
     .tiptap th {
@@ -392,7 +393,7 @@ html.dark .shiki span {
   @apply w-0.5 h-6 bg-primary -translate-x-3;
 }
 
-/* 
+/*
 .tiptap ::before {
   content: "";
   @apply absolute inset-0 bg-primary/10 mix-blend-multiply z-10;

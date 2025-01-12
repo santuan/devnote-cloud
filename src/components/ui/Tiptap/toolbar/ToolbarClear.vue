@@ -14,7 +14,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.unsetAllMarks')">
+  <Tooltip :name="t('toolbar.unsetAllMarks')" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().unsetAllMarks().run()"
       class="interactive"
@@ -24,7 +24,7 @@ const { t } = useI18n()
       <span class="sr-only">{{ t("toolbar.unsetAllMarks") }}</span>
     </ToolbarButton>
   </Tooltip>
-  <Tooltip :name="t('toolbar.clearNodes')">
+  <Tooltip :name="t('toolbar.clearNodes')" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().clearNodes().run()"
       class="interactive"

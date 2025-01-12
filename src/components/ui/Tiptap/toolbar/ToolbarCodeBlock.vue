@@ -14,7 +14,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.codeBlock')" shortcut="Ctrl Alt C">
+  <Tooltip :name="t('toolbar.codeBlock')" shortcut="Ctrl Alt C" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().toggleCodeBlock().run()"
       :class="{ 'is-active': editor.isActive('codeBlock') }"

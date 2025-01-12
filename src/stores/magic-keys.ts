@@ -15,7 +15,6 @@ export const useMagicKeysStore = defineStore("magic-keys", () => {
   const db_store = useDatabaseStore()
   const editor_store = useEditorStore()
 
-  
   const { editor } = storeToRefs(editor_store)
 
   const magic_command_menu = keys["ctrl+alt+o"]

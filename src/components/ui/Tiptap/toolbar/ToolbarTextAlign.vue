@@ -23,7 +23,7 @@ const { t } = useI18n()
   <DropdownMenuRoot>
     <ToolbarButton as-child>
       <DropdownMenuTrigger>
-        <Tooltip :name="t('toolbar.textAlign')">
+        <Tooltip :name="t('toolbar.textAlign')" side="bottom">
           <span class="flex items-center justify-center w-full bg-secondary interactive h-full">
             <template v-if="editor.isActive({ textAlign: 'center' })">
               <AlignCenter class="size-6" />

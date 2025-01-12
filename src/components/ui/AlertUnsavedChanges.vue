@@ -25,7 +25,7 @@ const db_store = useDatabaseStore()
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const largerThanLg = breakpoints.greater("lg")
 
-function set_document(id) {
+function setDocument(id) {
   if (largerThanLg.value === false) {
     document.show_sidebar_documents = false
   }
@@ -62,7 +62,7 @@ function focusOnTitle() {
         <div class="flex justify-between gap-x-2">
           <AlertDialogAction as-child>
             <button
-              @click="set_document(db_store.select_id)"
+              @click="setDocument(db_store.select_id)"
               class="bg-red-600 text-white hover:bg-red-800 outline-none inline-flex ring-0 hover:ring-2 ring-red-600 h-[35px] items-center justify-center rounded-[4px] px-3 text-xs font-semibold leading-none focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               {{ t("message.discardChanges") }}

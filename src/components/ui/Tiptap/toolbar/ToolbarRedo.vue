@@ -13,7 +13,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.redo')" >
+  <Tooltip :name="t('toolbar.redo')" side="bottom">
     <ToolbarButton
       class="flex items-center justify-center border outline-none size-8 focus-visible:border-primary border-secondary"
       @click="editor.chain().focus().redo().run()"

@@ -21,10 +21,7 @@ const { t } = useI18n()
 <template>
   <div :key="db_store.loaded_id">
     <article class="editor">
-      <div
-        class="editor-top"
-        v-if="content_editable"
-      >
+      <div class="editor-top" v-if="content_editable">
         <EditorTitle />
         <EditorToolbar v-if="show_editor_toolbar" />
         <button
@@ -49,7 +46,7 @@ const { t } = useI18n()
       >
         <h2
           v-show="!content_editable"
-          class="px-0 md:pl-5 md:p-4 mb-0 font-serif text-4xl md:text-5xl text-foreground font-black text-balance"
+          class="px-0 md:pl-5 md:p-4 mb-0 font-serif text-4xl md:text-5xl text-foreground md:pb-3.5 font-black text-balance"
           :class="settings.show_heading_one_preview ? '' : 'sr-only'"
         >
           {{ db_store.document_name }}

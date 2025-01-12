@@ -39,8 +39,7 @@ function set_document(id) {
     document.show_sidebar_documents = false
   }
   editor.value.commands.focus()
-  setTimeout(() => {
-  }, 100)
+  setTimeout(() => {}, 100)
 }
 
 function toggleCheck(item, isChecked) {

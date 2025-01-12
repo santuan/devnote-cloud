@@ -14,7 +14,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.separator')">
+  <Tooltip :name="t('toolbar.separator')" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().setHorizontalRule().run()"
       class="interactive"

@@ -14,7 +14,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.quote')" shortcut="Ctrl Shift B">
+  <Tooltip :name="t('toolbar.quote')" shortcut="Ctrl Shift B" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().toggleBlockquote().run()"
       :class="{ 'is-active': editor.isActive('blockquote') }"

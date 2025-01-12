@@ -14,7 +14,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.bold')" shortcut="Ctrl B">
+  <Tooltip :name="t('toolbar.bold')" shortcut="Ctrl B" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().toggleBold().run()"
       :disabled="!editor.can().chain().focus().toggleBold().run()"
@@ -26,7 +26,7 @@ const { t } = useI18n()
       <span class="sr-only">{{ t("toolbar.bold") }}</span>
     </ToolbarButton>
   </Tooltip>
-  <Tooltip :name="t('toolbar.italic')" shortcut="Ctrl I">
+  <Tooltip :name="t('toolbar.italic')" shortcut="Ctrl I" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().toggleItalic().run()"
       :disabled="!editor.can().chain().focus().toggleItalic().run()"
@@ -38,7 +38,7 @@ const { t } = useI18n()
       <span class="sr-only">{{ t("toolbar.italic") }}</span>
     </ToolbarButton>
   </Tooltip>
-  <Tooltip :name="t('toolbar.strike')" shortcut="Ctrl Shift S">
+  <Tooltip :name="t('toolbar.strike')" shortcut="Ctrl Shift S" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().toggleStrike().run()"
       :disabled="!editor.can().chain().focus().toggleStrike().run()"

@@ -143,7 +143,7 @@ function focusOnSidebar() {
             <ComboboxEmpty class="text-center text-muted-foreground p-4">
               {{ t("sidebar.noResults") }}
             </ComboboxEmpty>
-            <ComboboxGroup>
+            <ComboboxGroup v-if="allItemsTodo.length !== 0">
               <ComboboxLabel class="px-4 text-muted-foreground font-semibold mt-3 mb-3 font-mono">
                 {{ t("commandBar.documents") }}
               </ComboboxLabel>

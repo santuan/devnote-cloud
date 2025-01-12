@@ -14,7 +14,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.bulletList')" shortcut="Ctrl Shift 8">
+  <Tooltip :name="t('toolbar.bulletList')" shortcut="Ctrl Shift 8" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().toggleBulletList().run()"
       :class="{ 'is-active': editor.isActive('bulletList') }"

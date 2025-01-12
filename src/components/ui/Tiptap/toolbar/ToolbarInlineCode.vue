@@ -13,7 +13,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.code')" shortcut="Ctrl E">
+  <Tooltip :name="t('toolbar.code')" shortcut="Ctrl E" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().toggleCode().run()"
       :disabled="!editor.can().chain().focus().toggleCode().run()"

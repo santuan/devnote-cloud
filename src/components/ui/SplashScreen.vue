@@ -31,8 +31,7 @@ function focusOnTitle() {
         @click="focusOnTitle()"
         class="p-2 h-8 relative z-10 text-xs text-primary-foreground bg-primary"
       >
-        Current document not saved
-        <span v-show="db_store.document_name === ''">: Also title is required. Click to edit</span>
+        Document not saved
       </button>
     </Tooltip>
     <svg

@@ -16,7 +16,7 @@ const { setLink } = useSetLink(editor)
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.link')">
+  <Tooltip :name="t('toolbar.link')" side="bottom">
     <ToolbarButton
       @click="setLink"
       :class="{ 'is-active': editor.isActive('link') }"
@@ -27,7 +27,7 @@ const { setLink } = useSetLink(editor)
       <span class="sr-only">{{ t("toolbar.link") }}</span>
     </ToolbarButton>
   </Tooltip>
-  <Tooltip :name="t('toolbar.unlink')">
+  <Tooltip :name="t('toolbar.unlink')" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().unsetLink().run()"
       :disabled="!editor.isActive('link')"

@@ -17,7 +17,7 @@ const db = new Dexie("DB", { addons: [dexieCloud] }) as Dexie & {
   documents: EntityTable<Documents, "id">
 }
 
-db.version(1).stores({
+db.version(2).stores({
   documents: "@id, date, document_data",
 })
 

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { useSettingsStore } from "@/stores/settings"
+import { Heading1 } from "lucide-vue-next"
+const settings = useSettingsStore()
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
+</script>
+
 <template>
   <div
     class="flex flex-row items-start justify-between gap-3 pt-2 py-3 pr-3 border-t border-secondary"
@@ -24,11 +32,3 @@
     </button>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useSettingsStore } from "@/stores/settings"
-import { Heading1 } from "lucide-vue-next"
-const settings = useSettingsStore()
-import { useI18n } from "vue-i18n"
-const { t } = useI18n()
-</script>

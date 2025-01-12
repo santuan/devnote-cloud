@@ -5,6 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuGroup,
+  DropdownMenuPortal,
 } from "reka-ui"
 import { AArrowUp, AArrowDown } from "lucide-vue-next"
 import { onMounted } from "vue"
@@ -45,54 +46,57 @@ onMounted(() => {
         </span>
       </Tooltip>
     </DropdownMenuTrigger>
-    <DropdownMenuContent
-      :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
-      :align="document_store.show_sidebar_documents ? 'end' : 'start'"
-      class="z-10 grid w-44 text-xs bg-secondary border border-primary"
-    >
-      <DropdownMenuGroup>
-        <DropdownMenuItem
-          @click="toggleFontSize('app-font-size-xs')"
-          class="p-2 flex justify-between w-full hover:bg-secondary-foreground/10"
-          :class="appFontSize === 'app-font-size-xs' ? 'text-primary' : ''"
-        >
-          <span>{{ t("settings.fontsizexs") }} </span>
-          <span class="opacity-50 scale-90">.75rem</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          @click="toggleFontSize('app-font-size-sm')"
-          class="p-2 flex justify-between w-full hover:bg-secondary-foreground/10"
-          :class="appFontSize === 'app-font-size-sm' ? 'text-primary' : ''"
-        >
-          <span>{{ t("settings.fontsizesm") }} </span>
-          <span class="opacity-50 scale-90">.875rem</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          @click="toggleFontSize('app-font-size-md')"
-          class="p-2 flex justify-between w-full hover:bg-secondary-foreground/10"
-          :class="appFontSize === 'app-font-size-md' ? 'text-primary' : ''"
-        >
-          <span>{{ t("settings.fontsizemd") }} </span>
-          <span class="opacity-50 scale-90"> 1rem</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          @click="toggleFontSize('app-font-size-lg')"
-          class="p-2 flex justify-between w-full hover:bg-secondary-foreground/10"
-          :class="appFontSize === 'app-font-size-lg' ? 'text-primary' : ''"
-        >
-          <span>{{ t("settings.fontsizelg") }} </span>
-          <span class="opacity-50 scale-90">1.125rem</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          @click="toggleFontSize('app-font-size-xl')"
-          class="p-2 flex justify-between w-full hover:bg-secondary-foreground/10"
-          :class="appFontSize === 'app-font-size-xl' ? 'text-primary' : ''"
-        >
-          <span>{{ t("settings.fontsizexl") }} </span>
-          <span class="opacity-50 scale-90">1.25rem</span>
-        </DropdownMenuItem>
-      </DropdownMenuGroup>
-    </DropdownMenuContent>
+    <DropdownMenuPortal defer>
+      <DropdownMenuContent
+        :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
+        :align="document_store.show_sidebar_documents ? 'end' : 'start'"
+        class="z-10 grid w-44 text-xs bg-secondary border font-mono text-foreground border-primary"
+        :side-offset="7"
+      >
+        <DropdownMenuGroup>
+          <DropdownMenuItem
+            @click="toggleFontSize('app-font-size-xs')"
+            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            :class="appFontSize === 'app-font-size-xs' ? 'text-primary' : ''"
+          >
+            <span>{{ t("settings.fontsizexs") }} </span>
+            <span class="opacity-50 scale-90">.75rem</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            @click="toggleFontSize('app-font-size-sm')"
+            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            :class="appFontSize === 'app-font-size-sm' ? 'text-primary' : ''"
+          >
+            <span>{{ t("settings.fontsizesm") }} </span>
+            <span class="opacity-50 scale-90">.875rem</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            @click="toggleFontSize('app-font-size-md')"
+            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            :class="appFontSize === 'app-font-size-md' ? 'text-primary' : ''"
+          >
+            <span>{{ t("settings.fontsizemd") }} </span>
+            <span class="opacity-50 scale-90"> 1rem</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            @click="toggleFontSize('app-font-size-lg')"
+            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            :class="appFontSize === 'app-font-size-lg' ? 'text-primary' : ''"
+          >
+            <span>{{ t("settings.fontsizelg") }} </span>
+            <span class="opacity-50 scale-90">1.125rem</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            @click="toggleFontSize('app-font-size-xl')"
+            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            :class="appFontSize === 'app-font-size-xl' ? 'text-primary' : ''"
+          >
+            <span>{{ t("settings.fontsizexl") }} </span>
+            <span class="opacity-50 scale-90">1.25rem</span>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenuPortal>
   </DropdownMenuRoot>
 </template>
 
