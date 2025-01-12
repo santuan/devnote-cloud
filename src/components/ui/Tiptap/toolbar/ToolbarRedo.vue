@@ -15,7 +15,7 @@ const { t } = useI18n()
 <template>
   <Tooltip :name="t('toolbar.redo')" side="bottom">
     <ToolbarButton
-      class="flex items-center justify-center border outline-none size-8 focus-visible:border-primary border-secondary"
+      class="flex items-center interactive justify-center border outline-none size-8 focus-visible:border-primary border-secondary"
       @click="editor.chain().focus().redo().run()"
       :disabled="!editor.can().chain().focus().redo().run()"
       :value="t('toolbar.redo')"

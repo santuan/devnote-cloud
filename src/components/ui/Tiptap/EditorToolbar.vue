@@ -25,6 +25,7 @@ import ToolbarClear from "./toolbar/ToolbarClear.vue"
   <div class="pt-0.5 z-10 relative bg-background print:hidden" v-if="editor">
     <div class="relative grid w-full max-w-full gap-1 mx-auto control-group">
       <ToolbarRoot class="flex justify-start select-none mb-0.5 button-group md:w-auto">
+        <ToolbarCodeBlock />
         <ToolbarHeadingSelector />
         <ToolbarUndo />
         <ToolbarRedo />
@@ -35,7 +36,6 @@ import ToolbarClear from "./toolbar/ToolbarClear.vue"
         <ToolbarQuote />
         <ToolbarSeparator />
         <ToolbarInlineCode />
-        <ToolbarCodeBlock />
         <ToolbarLinks />
         <ToolbarTable />
         <ToolbarClear />
@@ -50,7 +50,7 @@ import ToolbarClear from "./toolbar/ToolbarClear.vue"
 }
 
 .button-group button {
-  @apply border border-secondary focus-within:border-primary outline-none h-[2.1rem] min-w-8 max-w-8 xl:max-w-full xl:flex-1 text-sm focus-visible:border-primary hover:!border-primary flex justify-center items-center duration-100;
+  @apply border border-secondary focus-within:border-primary outline-none h-[2.1rem] min-w-8 max-w-8 xl:max-w-full xl:flex-1 text-sm focus-visible:border-primary hover:!border-primary flex justify-center items-center;
   /* @apply @sm:bg-blue-600 @xs:bg-purple-600 @md:bg-yellow-600 @lg:bg-pink-600 @3xl:bg-gray-600 @xl:bg-red-600 @2xl:bg-green-600 @4xl:bg-red-600 @5xl:bg-emerald-600 */
   /* flex: 1; */
 }

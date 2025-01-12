@@ -178,6 +178,7 @@
     "add": "Agregar",
     "fixed": "Fijar",
     "unfixed": "Desfijar",
-    "jump": "Saltar al"
+    "jump": "Saltar al",
+    "loading": "Cargando"
   }
 }

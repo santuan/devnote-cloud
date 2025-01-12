@@ -178,6 +178,7 @@
     "add": "Add",
     "fixed": "Fixed",
     "unfixed": "Unfixed",
-    "jump": "Jump to"
+    "jump": "Jump to",
+    "loading": "Loading"
   }
 }

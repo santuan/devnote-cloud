@@ -35,11 +35,11 @@ const { setVideo } = useSetVideo(editor)
   <DropdownMenuRoot>
     <ToolbarButton as-child>
       <DropdownMenuTrigger
-        class="data-[state=open]:!bg-primary data-[state=open]:text-primary-foreground relative"
+        class="data-[state=open]:!bg-primary interactive data-[state=open]:text-primary-foreground relative"
       >
         <Tooltip :name="`${t('verb.add')} ${t('toolbar.image')}`" side="bottom">
           <span
-            class="flex items-center justify-center outline-none interactive size-8 focus-visible:border-primary border-secondary"
+            class="flex items-center interactive justify-center outline-none size-8 focus-visible:border-primary border-secondary"
           >
             <ImagePlus class="size-4" />
           </span>
@@ -101,7 +101,7 @@ const { setVideo } = useSetVideo(editor)
   </Tooltip>
   <Tooltip name="Video URL">
     <ToolbarButton
-      class="flex items-center justify-center border outline-none size-8 focus-visible:border-primary border-secondary"
+      class="flex items-center interactive justify-center border outline-none size-8 focus-visible:border-primary border-secondary"
       @click="setVideo()"
       value="Video URL"
     >

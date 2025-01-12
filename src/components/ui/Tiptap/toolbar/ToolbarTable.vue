@@ -35,7 +35,7 @@ const { t } = useI18n()
           shortcut="Right click on editor"
         >
           <span
-            class="flex items-center justify-center outline-none interactive size-8 focus-visible:border-primary border-secondary"
+            class="flex items-center interactive justify-center outline-none interactive size-8 focus-visible:border-primary border-secondary"
           >
             <Table class="size-4 shrink-0" />
           </span>

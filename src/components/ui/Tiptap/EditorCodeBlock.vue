@@ -47,9 +47,8 @@
 <script lang="ts">
 import { NodeViewContent, nodeViewProps, NodeViewWrapper } from "@tiptap/vue-3"
 import { bundledLanguages } from "shiki/bundle/web"
-import RadixVirtual from "@/components/ui/RadixVirtual.vue"
+import { RadixVirtual } from "@/components/ui/Tiptap/AsyncRadixVirtual.ts"
 import { Clipboard, ClipboardCheck, FoldVertical, UnfoldVertical } from "lucide-vue-next"
-
 import { ScrollAreaRoot, ScrollAreaScrollbar, ScrollAreaThumb, ScrollAreaViewport } from "reka-ui"
 import { useElementSize } from "@vueuse/core"
 import { shallowRef } from "vue"
@@ -81,7 +80,6 @@ export default {
 
   setup() {
     const codeHeight = shallowRef(null)
-
     const { width, height } = useElementSize(codeHeight)
     return {
       codeHeight,
@@ -112,20 +110,15 @@ export default {
           const el = document.createElement("textarea")
           el.value = value
           document.body.append(el)
-
           el.select()
           el.setSelectionRange(0, value.length)
-
           if (document.execCommand("copy")) {
             this.copyText = "Copied" // popper?
-            // successful();
           }
-
           el.remove()
         } else {
           this.copyText = "Error!"
           alert("Error!")
-          // failure();
         }
       }
       setTimeout(() => {

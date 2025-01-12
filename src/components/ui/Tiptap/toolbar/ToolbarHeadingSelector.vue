@@ -19,7 +19,7 @@ const { t } = useI18n()
 <template>
   <DropdownMenuRoot>
     <ToolbarButton as-child>
-      <DropdownMenuTrigger class="headingSelector">
+      <DropdownMenuTrigger class="headingSelector interactive">
         <template v-if="editor.isActive('heading', { level: 1 })">
           {{ t("toolbar.heading1") }}
         </template>
