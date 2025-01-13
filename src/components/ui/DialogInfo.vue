@@ -72,28 +72,34 @@ whenever(magicAbout, (n) => {
                 <h3>Atajos de teclado</h3>
                 <ul>
                   <li>
-                    <p><code>Ctrl+Alt+P</code> Alternar entre modo editar o previsualizar.</p>
+                    <p><code>Ctrl Shift Alt S</code> Mostrar configuraciones</p>
                   </li>
                   <li>
-                    <p><code>Ctrl+Alt+O</code> Barra de comandos para navegar documentos.</p>
+                    <p><code>Ctrl Alt N</code> Crear nuevo documento</p>
                   </li>
                   <li>
-                    <p><code>Ctrl+M</code> Colapsar el menu.</p>
+                    <p><code>Ctrl Alt P</code> Alternar entre modo editar o previsualizar.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl+Alt+I</code> Importar DB</p>
+                    <p><code>Ctrl Alt O</code> Barra de comandos para navegar documentos.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl+Alt+E</code> Exportar DB</p>
+                    <p><code>Ctrl M</code> Colapsar el menu.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl+Alt+FlechaDerecha</code> expande el area de edición.</p>
+                    <p><kbd>Ctrl Alt .</kbd> Expande el editor de texto a todo el ancho</p>
                   </li>
                   <li>
-                    <p><code>Ctrl+Alt+FlechaIzquierda</code> colapsa el area de edición.</p>
+                    <p><code>Shift Delete</code> Eliminar documento en curso</p>
                   </li>
                   <li>
-                    <p><code>Shift+Delete</code> Eliminar documento en curso</p>
+                    <p><code>Ctrl Shift Alt &larr</code> Saltar al menú</p>
+                  </li>
+                  <li>
+                    <p><code>Ctrl Shift Alt &rarr</code> Saltar al titulo actual</p>
+                  </li>
+                  <li>
+                    <p><code>Ctrl Shift Alt E</code> Saltar al editor de texto</p>
                   </li>
                 </ul>
               </article>
@@ -125,6 +131,12 @@ whenever(magicAbout, (n) => {
                 <h3>Keyboard Shortcuts</h3>
                 <ul>
                   <li>
+                    <p><code>Ctrl Shift Alt S</code> Show settings</p>
+                  </li>
+                  <li>
+                    <p><code>Ctrl Alt N</code> Create new document</p>
+                  </li>
+                  <li>
                     <p><kbd>Ctrl Alt P</kbd> Toggle between edit or preview mode.</p>
                   </li>
                   <li>
@@ -132,12 +144,6 @@ whenever(magicAbout, (n) => {
                   </li>
                   <li>
                     <p><kbd>Ctrl M</kbd> Collapse the menu.</p>
-                  </li>
-                  <li>
-                    <p><kbd>Ctrl Alt I</kbd> Import DB</p>
-                  </li>
-                  <li>
-                    <p><kbd>Ctrl Alt E</kbd> Export DB</p>
                   </li>
                   <li>
                     <p><kbd>Ctrl Alt .</kbd> Expand/Collapse the editing area.</p>

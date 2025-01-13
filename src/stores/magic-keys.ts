@@ -26,7 +26,7 @@ export const useMagicKeysStore = defineStore("magic-keys", () => {
   const magic_focus_title = keys["ctrl+shift+alt+ArrowRight"]
   const magic_next_document = keys["ctrl+ArrowDown"]
   const magic_previous_document = keys["ctrl+ArrowUp"]
-  const magic_show_settings = keys["ctrl+alt+w"]
+  const magic_show_settings = keys["ctrl+shift+alt+s"]
   const magic_toggle_preview = keys["ctrl+alt+p"]
 
   whenever(magic_focus_sidebar, (n) => {
@@ -54,7 +54,7 @@ export const useMagicKeysStore = defineStore("magic-keys", () => {
   })
 
   whenever(magic_show_settings, (n) => {
-    if (n) modal.show_settings = true
+    if (n) modal.show_settings = !modal.show_settings
   })
 
   whenever(magic_delete_document, (n) => {
