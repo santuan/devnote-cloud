@@ -42,14 +42,14 @@ const { focus_documents } = storeToRefs(focus)
         <kbd class="scale-90">ctrl</kbd>
         <button
           @click="db_store.navigate_document('prev')"
-          class="flex justify-center items-center bg-background"
+          class="flex justify-center items-center bg-background outline-2 outline-primary hover:outline-offset-2 focus-visible:outline-offset-2 focus-visible:outline-dotted"
         >
           <ArrowUp class="size-4 opacity-80" />
           <span class="sr-only">Navigate prev</span>
         </button>
         <button
           @click="db_store.navigate_document('next')"
-          class="flex justify-center items-center bg-background"
+          class="flex justify-center items-center bg-background outline-2 outline-primary hover:outline-offset-2 focus-visible:outline-offset-2 focus-visible:outline-dotted"
         >
           <ArrowDown class="size-4 opacity-80" />
           <span class="sr-only">Navigate next</span>

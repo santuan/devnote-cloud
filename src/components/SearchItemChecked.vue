@@ -47,7 +47,7 @@ function toggleCheck(item, isChecked) {
             :aria-label="t('sidebar.markAsUndone')"
           />
           <div
-            class="peer-focus:outline-none items-center size-7 md:size-6 flex justify-center rounded-full relative z-[50] mr-0.5 peer-focus:ring-1 peer-focus:ring-blue-300 dark:peer-focus:ring-primary"
+            class="peer-focus:outline-none items-center size-7 md:size-6 flex justify-center rounded-full relative z-[50] mr-0.5 peer-focus:ring-1 peer-focus:ring-primary dark:peer-focus:ring-primary hover:ring-1 hover:ring-primary"
           >
             <CircleOff class="size-5 md:size-4" />
           </div>
