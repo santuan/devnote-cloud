@@ -17,7 +17,7 @@ import Tooltip from "@/components/ui/Tooltip.vue"
 const document_store = useDocumentStore()
 const mode = useColorMode()
 const isDark = useDark()
-const colorTheme = useStorage("theme", "theme-blue")
+const colorTheme = useStorage("theme", "theme-forground")
 const { t } = useI18n()
 
 const favicon = computed(() => {
@@ -53,20 +53,20 @@ onMounted(() => {
           class="flex items-center justify-center border hover:bg-secondary/80 border-secondary bg-background size-8"
         >
           <Moon
-            class="transition-all duration-300 scale-100 rotate-0 size-4 dark:-rotate-90 dark:scale-0"
+            class="transition-all duration-300 scale-0 rotate-0 size-4 dark:scale-100"
           />
           <SunMedium
-            class="absolute transition-all duration-300 scale-0 rotate-90 size-4 dark:rotate-0 dark:scale-100"
+            class="absolute transition-all duration-300 rotate-90 size-4 scale-100 dark:scale-0"
           />
           <span class="sr-only">{{ t("settings.themeDescription") }}</span>
         </span>
       </Tooltip>
     </DropdownMenuTrigger>
-    <DropdownMenuPortal defer>
+    <DropdownMenuPortal >
       <DropdownMenuContent
         :align="document_store.show_sidebar_documents ? 'end' : 'center'"
         :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
-        class="z-10 grid w-40 text-xs font-mono text-foreground bg-secondary border border-primary"
+        class="z-10 grid w-48 text-xs font-mono text-foreground bg-secondary border border-primary"
         :side-offset="6"
       >
         <DropdownMenuGroup>
@@ -119,6 +119,12 @@ onMounted(() => {
             class="rounded-full outline-none size-4 bg-violet-500 hover:ring-2 focus-visible:ring-2 ring-violet-500/50 ring-offset-1"
             :class="colorTheme === 'theme-violet' ? ' !ring-primary/50 ring-4 !ring-offset-1' : ''"
             ><span class="sr-only">{{ t("settings.theme") }} violet</span></DropdownMenuItem
+          >
+          <DropdownMenuItem
+            @click="toggleColorTheme('theme-foreground')"
+            class="rounded-full outline-none size-4 bg-foreground/90 hover:ring-2 focus-visible:ring-2 ring-foreground/20  ring-offset-1"
+            :class="colorTheme === '' ? ' !ring-primary/50 ring-4 !ring-offset-1' : ''"
+            ><span class="sr-only">{{ t("settings.theme") }} Foreground</span></DropdownMenuItem
           >
         </DropdownMenuGroup>
       </DropdownMenuContent>

@@ -46,7 +46,7 @@ onMounted(() => {
         </span>
       </Tooltip>
     </DropdownMenuTrigger>
-    <DropdownMenuPortal defer>
+    <DropdownMenuPortal >
       <DropdownMenuContent
         :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
         :align="document_store.show_sidebar_documents ? 'end' : 'start'"

@@ -17,7 +17,7 @@ const { t } = useI18n()
   <div>
     <header
       ref="dropZoneRef"
-      class="fixed top-0 print:hidden z-[60] !select-none flex flex-col justify-start h-screen border-r lg:sticky bg-background border-secondary focus-within:ring-1 focus-within:ring-primary/50"
+      class="fixed top-0 print:hidden z-[60] !select-none flex flex-col justify-start h-screen border-r lg:sticky bg-background focus-within:ring-1 !border-secondary focus-within:ring-primary/50 focus-visible:outline-dashed"
       :class="document.show_sidebar_documents ? 'min-w-80 max-w-80' : ' '"
     >
       <SidebarTop />

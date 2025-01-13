@@ -26,17 +26,17 @@ import ToolbarClear from "./toolbar/ToolbarClear.vue"
     <div class="relative grid w-full max-w-full gap-1 mx-auto control-group">
       <ToolbarRoot class="flex justify-start select-none mb-0.5 button-group md:w-auto">
         <ToolbarCodeBlock />
-        <ToolbarHeadingSelector />
         <ToolbarUndo />
         <ToolbarRedo />
-        <ToolbarMedia />
+        <ToolbarHeadingSelector />
         <ToolbarCharacters />
         <ToolbarTextAlign />
-        <ToolbarList />
-        <ToolbarQuote />
-        <ToolbarSeparator />
         <ToolbarInlineCode />
+        <ToolbarSeparator />
+        <ToolbarQuote />
+        <ToolbarList />
         <ToolbarLinks />
+        <ToolbarMedia />
         <ToolbarTable />
         <ToolbarClear />
       </ToolbarRoot>

@@ -78,7 +78,7 @@ const focusEditor = () => {
         <span class="sr-only"> Devnote. {{ t("sidebar.navigation") }} </span>
       </Tooltip>
     </DropdownMenuTrigger>
-    <DropdownMenuPortal defer>
+    <DropdownMenuPortal >
       <DropdownMenuContent
         side="bottom"
         :side-offset="5"

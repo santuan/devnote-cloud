@@ -254,7 +254,7 @@ onBeforeUnmount(() => {
   @apply w-full scrollbar-none border-0 print:!h-full print:!max-h-none overflow-x-hidden print:!overflow-y-auto;
 
   &.is-editable {
-    @apply max-h-[calc(100dvh-3rem)] bg-secondary/30;
+    @apply max-h-[calc(100dvh-3rem)] bg-secondary/30 border-t-[1px] border-t-transparent;
 
     .tiptap td,
     .tiptap th {

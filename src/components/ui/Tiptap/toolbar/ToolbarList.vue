@@ -21,7 +21,7 @@ const { t } = useI18n()
       class="interactive"
       :value="t('toolbar.bulletList')"
     >
-      <List />
+      <List class="!size-5"/>
       <span class="sr-only">{{ t("toolbar.bulletList") }}</span>
     </ToolbarButton>
   </Tooltip>
@@ -32,7 +32,7 @@ const { t } = useI18n()
       class="interactive"
       :value="t('toolbar.orderedList')"
     >
-      <ListOrdered />
+      <ListOrdered class="!size-5"/>
       <span class="sr-only">{{ t("toolbar.orderedList") }}</span>
     </ToolbarButton>
   </Tooltip>

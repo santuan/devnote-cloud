@@ -1,6 +1,6 @@
 <script setup>
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core"
-import { Circle } from "lucide-vue-next"
+import { Circle, CircleChevronRight   } from "lucide-vue-next"
 import { storeToRefs } from "pinia"
 import { useDatabaseStore } from "@/stores/database"
 import { useDocumentStore } from "@/stores/document"
@@ -38,8 +38,13 @@ function set_document(id) {
   if (!largerThanLg.value) {
     document.show_sidebar_documents = false
   }
-  editor.value.commands.focus()
-  setTimeout(() => {}, 100)
+  if (largerThanLg.value) {
+    
+    setTimeout(() => {
+      editor.value.commands.focus()
+    }, 100)
+  }
+ 
 }
 
 function toggleCheck(item, isChecked) {
@@ -48,16 +53,16 @@ function toggleCheck(item, isChecked) {
 </script>
 
 <template>
-  <div class="relative flex items-center justify-between w-full pr-3 min-h-8 md:pr-2">
+  <div class="relative flex items-center justify-between w-full pr-3 min-h-8 gap-2 md:pr-2">
     <button
       class="flex interactive hover:!text-primary px-0.5 h-6 w-full items-center outline-none justify-start text-sm text-left focus-within:ring-1 ring-primary"
       :class="
         loaded_id === props.data.id ?
-          'text-primary underline underline-offset-4 decoration-primary/50'
+          'text-primary underline decoration-double underline-offset-2 decoration-primary/50'
         : ''
       "
-      @click="set_document(props.data.id)"
       @dblclick="document.toggle_editable()"
+      @click="set_document(props.data.id)"
     >
       <span class="@sm:max-w-full max-w-80">
         <template v-if="props.data.document_data?.name">
@@ -88,9 +93,10 @@ function toggleCheck(item, isChecked) {
             @change="toggleCheck(props.data, $event.target.checked)"
           />
           <div
-            class="peer-focus:outline-none items-center size-7 md:size-6 flex justify-center rounded-full relative z-[50] mr-0.5 peer-focus:ring-1 peer-focus:ring-blue-300 dark:peer-focus:ring-primary"
+            class="peer-focus:outline-none items-center size-7 md:size-6 flex justify-center rounded-full relative z-[50] mr-0.5 peer-focus:ring-1 peer-focus:ring-blue-300 dark:peer-focus:ring-primary hover:ring-primary hover:ring-2"
           >
-            <Circle class="size-5 md:size-4" />
+            <Circle v-show="loaded_id === props.data.id" class="size-5 md:size-4 text-primary " />
+            <Circle v-show="loaded_id !== props.data.id" class="size-5 md:size-4 " />
           </div>
           <span class="sr-only">{{ t("sidebar.markAsDone") }}</span>
         </label>

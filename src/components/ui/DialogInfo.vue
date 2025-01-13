@@ -17,7 +17,7 @@ import { ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { useMagicKeys, whenever } from "@vueuse/core"
 import { useModalStore } from "@/stores/modal"
-import { X } from "lucide-vue-next"
+import { ArrowDown, ArrowUp, X } from "lucide-vue-next"
 
 const modal = useModalStore()
 const open = ref(false)
@@ -72,10 +72,10 @@ whenever(magicAbout, (n) => {
                 <h3>Atajos de teclado</h3>
                 <ul>
                   <li>
-                    <p><code>Ctrl Shift Alt S</code> Mostrar configuraciones</p>
+                    <p><code>Ctrl Shift Alt S</code> Mostrar configuraciones.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Alt N</code> Crear nuevo documento</p>
+                    <p><code>Ctrl Alt N</code> Crear nuevo documento.</p>
                   </li>
                   <li>
                     <p><code>Ctrl Alt P</code> Alternar entre modo editar o previsualizar.</p>
@@ -87,19 +87,25 @@ whenever(magicAbout, (n) => {
                     <p><code>Ctrl M</code> Colapsar el menu.</p>
                   </li>
                   <li>
-                    <p><kbd>Ctrl Alt .</kbd> Expande el editor de texto a todo el ancho</p>
+                    <p><code class="inline-flex gap-1">Ctrl <ArrowUp class="size-4" /></code> Seleccionar documento anterior.</p>
                   </li>
                   <li>
-                    <p><code>Shift Delete</code> Eliminar documento en curso</p>
+                    <p><code class="inline-flex gap-1">Ctrl <ArrowDown class="size-4" /></code> Seleccionar documento siguiente.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt &larr</code> Saltar al menú</p>
+                    <p><code>Ctrl Alt .</code> Expande el editor de texto a todo el ancho.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt &rarr</code> Saltar al titulo actual</p>
+                    <p><code>Shift Delete</code> Eliminar documento en curso.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt E</code> Saltar al editor de texto</p>
+                    <p><code>Ctrl Shift Alt &larr</code> Saltar al menú.</p>
+                  </li>
+                  <li>
+                    <p><code>Ctrl Shift Alt &rarr</code> Saltar al titulo actual.</p>
+                  </li>
+                  <li>
+                    <p><code>Ctrl Shift Alt E</code> Saltar al editor de texto.</p>
                   </li>
                 </ul>
               </article>
@@ -131,37 +137,43 @@ whenever(magicAbout, (n) => {
                 <h3>Keyboard Shortcuts</h3>
                 <ul>
                   <li>
-                    <p><code>Ctrl Shift Alt S</code> Show settings</p>
+                    <p><code>Ctrl Shift Alt S</code> Show settings.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Alt N</code> Create new document</p>
+                    <p><code>Ctrl Alt N</code> Create new document.</p>
                   </li>
                   <li>
-                    <p><kbd>Ctrl Alt P</kbd> Toggle between edit or preview mode.</p>
+                    <p><code>Ctrl Alt P</code> Toggle between edit or preview mode.</p>
                   </li>
                   <li>
-                    <p><kbd>Ctrl Alt O</kbd> Command bar to navigate documents.</p>
+                    <p><code>Ctrl Alt O</code> Command bar to navigate documents.</p>
                   </li>
                   <li>
-                    <p><kbd>Ctrl M</kbd> Collapse the menu.</p>
+                    <p><code>Ctrl M</code> Collapse the menu.</p>
                   </li>
                   <li>
-                    <p><kbd>Ctrl Alt .</kbd> Expand/Collapse the editing area.</p>
+                    <p><code class="inline-flex gap-1">Ctrl <ArrowUp class="size-4" /></code> Select previous document.</p>
                   </li>
                   <li>
-                    <p><kbd>Shift Delete</kbd> Delete current document</p>
+                    <p><code class="inline-flex gap-1">Ctrl <ArrowDown class="size-4" /></code> Select next document.</p>
                   </li>
                   <li>
-                    <p><kbd>ctrl shift alt &uarr;</kbd> Toogle editor typography options</p>
+                    <p><code>Ctrl Alt .</code> Expand/Collapse the editing area.</p>
                   </li>
                   <li>
-                    <p><kbd>ctrl shift alt &larr;</kbd> Focus on sidebar</p>
+                    <p><code>Shift Delete</code> Delete current document.</p>
                   </li>
                   <li>
-                    <p><kbd>ctrl shift alt &rarr;</kbd> Focus on title</p>
+                    <p><code>ctrl shift alt &uarr;</code> Toogle editor typography options.</p>
                   </li>
                   <li>
-                    <p><kbd>ctrl shift alt &darr;</kbd> Focus on editor</p>
+                    <p><kbd>ctrl shift alt &larr;</kbd> Focus on sidebar.</p>
+                  </li>
+                  <li>
+                    <p><kbd>ctrl shift alt &rarr;</kbd> Focus on title.</p>
+                  </li>
+                  <li>
+                    <p><kbd>ctrl shift alt &darr;</kbd> Focus on editor.</p>
                   </li>
                 </ul>
               </article>
