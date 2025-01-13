@@ -8,7 +8,7 @@ import { useSettingsStore } from "@/stores/settings"
 import Editor from "@/components/ui/Tiptap/EditorTipTap.vue"
 import EditorTitle from "@/components/ui/Tiptap/EditorTitle.vue"
 import SplashScreen from "@/components/ui/SplashScreen.vue"
-import { EditorToolbar } from "@/components/ui/Tiptap/AsyncEditorToolbar.ts"
+import EditorToolbar from "@/components/ui/Tiptap/EditorToolbar.vue"
 
 const settings = useSettingsStore()
 const db_store = useDatabaseStore()

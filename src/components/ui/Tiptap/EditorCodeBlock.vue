@@ -47,7 +47,7 @@
 <script lang="ts">
 import { NodeViewContent, nodeViewProps, NodeViewWrapper } from "@tiptap/vue-3"
 import { bundledLanguages } from "shiki/bundle/web"
-import { RadixVirtual } from "@/components/ui/Tiptap/AsyncRadixVirtual.ts"
+import RadixVirtual from "@/components/ui/Tiptap/RadixVirtual.vue"
 import { Clipboard, ClipboardCheck, FoldVertical, UnfoldVertical } from "lucide-vue-next"
 import { ScrollAreaRoot, ScrollAreaScrollbar, ScrollAreaThumb, ScrollAreaViewport } from "reka-ui"
 import { useElementSize } from "@vueuse/core"

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { ArrowRightToLine, ArrowLeftToLine } from "lucide-vue-next"
-import { DialogCommandMenu } from "@/components/ui/AsyncDialogCommandMenu.ts"
-import { DialogSettings } from "@/components/ui/Settings/AsyncDialogSetting.ts"
+import DialogCommandMenu from "@/components/ui/DialogCommandMenu.vue"
+import DialogSettings from "@/components/ui/Settings/DialogSettings.vue"
 import { useDocumentStore } from "@/stores/document"
 import { useI18n } from "vue-i18n"
 import ButtonCreateDocumentCollapse from "@/components/ui/ButtonCreateDocumentCollapse.vue"
 import DropdownLogo from "@/components/ui/DropdownLogo.vue"
-import { ToggleEditable } from "@/components/ui/AsyncToggleEditable.ts"
-import { ToggleFontSize } from "@/components/ui/AsyncToggleFontSize.ts"
-import { ToggleTheme } from "@/components/ui/AsyncToggleTheme.ts"
+import ToggleEditable from "@/components/ui/ToggleEditable.vue"
+import ToggleFontSize from "@/components/ui/ToggleFontSize.vue"
+import ToggleTheme from "@/components/ui/ToggleTheme.vue"
 import Tooltip from "@/components/ui/Tooltip.vue"
 
 const document = useDocumentStore()
