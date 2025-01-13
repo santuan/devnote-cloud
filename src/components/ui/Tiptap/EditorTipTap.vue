@@ -40,10 +40,12 @@ import { onMounted, onBeforeUnmount } from "vue"
 import { useDatabaseStore } from "@/stores/database"
 import { useEditorStore } from "@/stores/editor"
 import { useDocumentStore } from "@/stores/document"
+import { useSettingsStore } from "@/stores/settings"
 import { storeToRefs } from "pinia"
 import { Editor, EditorContent, VueNodeViewRenderer } from "@tiptap/vue-3"
 import { useI18n } from "vue-i18n"
 import EditorContextMenu from "./EditorContextMenu.vue"
+const settings = useSettingsStore()
 const db_store = useDatabaseStore()
 const document = useDocumentStore()
 const editor_store = useEditorStore()
@@ -172,6 +174,7 @@ onBeforeUnmount(() => {
       :class="[
         toolbar ? 'with-toolbar' : '',
         content_editable ? 'is-editable' : 'is-preview',
+        settings.show_heading_one_preview ? '' : 'hide_heading_one_preview',
         db_store.loaded_id === '' || editor.isEmpty ? 'is-empty' : '',
       ]"
       style="--scrollbar-size: 10px"
@@ -278,6 +281,10 @@ onBeforeUnmount(() => {
     .ProseMirror-separator {
       @apply !hidden;
     }
+  }
+
+  &.hide_heading_one_preview {
+    @apply max-h-[calc(100dvh-7rem)] md:max-h-[calc(100dvh-1rem)] min-h-screen;
   }
 }
 

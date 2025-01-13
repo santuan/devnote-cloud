@@ -22,7 +22,7 @@ const { focus_documents } = storeToRefs(focus)
   <div class="h-full @container">
     <ButtonCreateDocument />
     <div
-      class="flex pl-2 pr-2 py-1.5 mt-0 focus-within:border-primary bg-primary/5 border-t border-primary/25 justify-between items-center"
+      class="flex pl-2 pr-2 py-1.5 mt-0 focus-within:border-primary bg-primary/5 border-t border-primary/5 justify-between items-center"
     >
       <h2
         class="text-xs outline-none text-primary flex justify-start items-center gap-1"
