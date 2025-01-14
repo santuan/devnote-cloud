@@ -236,7 +236,7 @@ const isFullWidth = computed<boolean>(() => !!props.node.attrs.dataFullWidth)
         <PopoverContent
           :side="'bottom'"
           :align="'start'"
-          class="px-0.5 h-9 justify-center items-center gap-0.5 flex font-mono text-xs text-foreground duration-300 focus-visible:ring-4 hover:ring-2 bg-background/90 ring-1 ring-primary"
+          class="px-0.5 h-9 justify-center items-center gap-0.5 flex font-mono text-xs text-foreground focus-visible:ring-4 hover:ring-2 bg-background/90 ring-1 ring-primary"
         >
           <button
             v-for="(mediaAction, i) in resizableMediaActions"

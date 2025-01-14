@@ -50,8 +50,8 @@ onMounted(() => {
     </DropdownMenuTrigger>
     <DropdownMenuPortal>
       <DropdownMenuContent
-        :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
-        :align="document_store.show_sidebar_documents ? 'end' : 'start'"
+        :side="document_store.show_sidebar_documents ? 'bottom' : 'left'"
+        :align="document_store.show_sidebar_documents ? 'end' : 'center'"
         class="z-10 grid w-48 text-xs bg-background border font-mono text-foreground border-primary"
         :side-offset="5"
       >

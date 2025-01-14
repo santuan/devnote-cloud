@@ -21,7 +21,7 @@ function toggleCheck(item, isChecked) {
 
 <template>
   <div
-    class="z-20 flex items-center justify-between w-full pr-3 duration-300 min-h-8 md:pr-2 opacity-70"
+    class="z-20 flex items-center justify-between w-full pr-3 min-h-8 md:pr-2 opacity-70"
   >
     <span
       class="flex py-0.5 ml-1 rounded-full w-full items-center outline-none justify-start gap-2 text-sm text-left focus-within:ring-1 ring-primary"

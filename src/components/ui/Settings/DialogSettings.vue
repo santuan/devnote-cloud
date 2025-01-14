@@ -52,7 +52,7 @@ const { show_settings } = storeToRefs(modal)
       </DialogTrigger>
     </Tooltip>
     <DialogPortal >
-      <DialogOverlay class="bg-background fixed inset-0 z-[60]" />
+      <DialogOverlay class="bg-background/80 fixed inset-0 z-[60]" />
       <DialogContent
         class="font-mono fixed top-6 md:top-[50%] left-[50%] max-h-[85vh] w-[98vw] max-w-4xl translate-x-[-50%] md:translate-y-[-50%] bg-background rounded py-4 md:p-4 focus:outline-none z-[100]"
       >

@@ -36,7 +36,7 @@ const { setVideo } = useSetVideo(editor)
   <DropdownMenuRoot>
     <ToolbarButton as-child>
       <DropdownMenuTrigger
-        class="data-[state=open]:!bg-primary group interactive data-[state=open]:text-primary-foreground relative"
+        class=" group interactive data-[state=open]:text-primary relative"
       >
         <Tooltip :name="`${t('verb.add')} ${t('toolbar.image')}`" side="bottom">
           <span

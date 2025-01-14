@@ -10,7 +10,7 @@
         {{ t("settings.themeDescription") }}
       </p>
     </div>
-    <ToggleTheme />
+    <ToggleTheme side="left"/>
   </div>
 </template>
 

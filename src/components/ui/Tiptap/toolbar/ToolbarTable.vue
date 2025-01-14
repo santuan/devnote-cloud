@@ -27,7 +27,7 @@ const { t } = useI18n()
   <DropdownMenuRoot>
     <ToolbarButton as-child>
       <DropdownMenuTrigger
-        class="data-[state=open]:!bg-primary group data-[state=open]:text-primary-foreground relative"
+        class="group data-[state=open]:text-primary relative"
       >
         <Tooltip
           :name="`${t('toolbar.table')} (experimental)`"
