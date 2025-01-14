@@ -27,6 +27,11 @@ const { show_alert_logout } = storeToRefs(modal_store)
 const { editor } = storeToRefs(editor_store)
 const { focus_sidebar } = storeToRefs(focus_store)
 const user = db.cloud.currentUser
+import { useObservable } from "@vueuse/rxjs"
+
+const ui = useObservable(
+  db.cloud.currentUser
+)
 
 const { t } = useI18n()
 
@@ -58,10 +63,10 @@ const focusEditor = () => {
 <template>
   <DropdownMenuRoot v-model:open="showNavigation">
     <DropdownMenuTrigger
-      class="flex items-center justify-start gap-2 p-1 w-8 h-8 focus-visible:ring-1 focus-within:ring-2 focus-within:ring-primary focus-visible:ring-primary"
+      class="flex items-center justify-start gap-2 p-1 w-8 h-8 focus-visible:ring-1 focus-within:ring-1 focus-within:ring-primary focus-visible:ring-primary"
       :aria-label="t('sidebar.navigation')"
     >
-      <Tooltip name="Options">
+      <Tooltip :name="ui?.name !== 'Unauthorized' ? 'User' : 'Focus'">
         <svg
           ref="focus_sidebar"
           tabindex="-1"
@@ -90,7 +95,7 @@ const focusEditor = () => {
             {{ t("sidebar.navigation") }}
           </p>
           <p
-            class="text-foreground/70 !select-all font-bold text-sm px-2 my-2"
+            class="text-primary/70 !select-all font-bold text-sm px-2 my-2"
             v-if="user?.value?.name !== 'Unauthorized'"
           >
             {{ user?.value?.name }}

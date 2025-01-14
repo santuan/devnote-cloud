@@ -22,6 +22,10 @@ export const useDatabaseStore = defineStore("database", () => {
   const document_checked = shallowRef(false)
 
   async function create_document() {
+    if (document_name.value === "") {
+      toast.error("Can't create document without title")
+      return
+    }
     status.value = "CHANGING"
     try {
       const new_document_id = await db.documents.add({
@@ -118,7 +122,7 @@ export const useDatabaseStore = defineStore("database", () => {
   }
 
   async function navigate_document(direction: "prev" | "next") {
-    if (!allItemsTodo.value?.length) return
+    if (allItemsTodo.value?.length <= 1) return
 
     const currentIndex = allItemsTodo.value.findIndex((item) => item.id === loaded_id.value)
     let nextIndex

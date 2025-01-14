@@ -19,6 +19,7 @@ import { useSetVideo } from "@/composables/useSetVideo"
 import { ImageDown, ImagePlus, Redo2, Video, Youtube } from "lucide-vue-next"
 import { useI18n } from "vue-i18n"
 import Tooltip from "@/components/ui/Tooltip.vue"
+import CornerBottomRight from "@/assets/corner-bottom-right.vue"
 
 const settings = useSettingsStore()
 const document = useEditorStore()
@@ -35,7 +36,7 @@ const { setVideo } = useSetVideo(editor)
   <DropdownMenuRoot>
     <ToolbarButton as-child>
       <DropdownMenuTrigger
-        class="data-[state=open]:!bg-primary interactive data-[state=open]:text-primary-foreground relative"
+        class="data-[state=open]:!bg-primary group interactive data-[state=open]:text-primary-foreground relative"
       >
         <Tooltip :name="`${t('verb.add')} ${t('toolbar.image')}`" side="bottom">
           <span
@@ -44,6 +45,7 @@ const { setVideo } = useSetVideo(editor)
             <ImagePlus class="size-4" />
           </span>
           <span class="sr-only">{{ t("verb.add") }} {{ t("toolbar.image") }}</span>
+          <CornerBottomRight/>
         </Tooltip>
       </DropdownMenuTrigger>
     </ToolbarButton>

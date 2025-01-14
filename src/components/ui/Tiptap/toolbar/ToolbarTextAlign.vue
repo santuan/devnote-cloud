@@ -13,6 +13,7 @@ import { storeToRefs } from "pinia"
 import { AlignCenter, AlignJustify, AlignLeft, AlignRight, Square } from "lucide-vue-next"
 import { useI18n } from "vue-i18n"
 import Tooltip from "@/components/ui/Tooltip.vue"
+import CornerBottomRight from "@/assets/corner-bottom-right.vue"
 
 const document = useEditorStore()
 const { editor } = storeToRefs(document)
@@ -22,9 +23,11 @@ const { t } = useI18n()
 <template>
   <DropdownMenuRoot>
     <ToolbarButton as-child>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger class="group">
         <Tooltip :name="t('toolbar.textAlign')" side="bottom">
-          <span class="flex items-center interactive justify-center w-full bg-secondary interactive h-full">
+          <span
+            class="flex items-center relative interactive justify-center w-full bg-secondary interactive h-full"
+          >
             <template v-if="editor.isActive({ textAlign: 'center' })">
               <AlignCenter class="size-6" />
             </template>
@@ -38,12 +41,13 @@ const { t } = useI18n()
               <AlignLeft class="size-6" />
             </template>
             <span class="sr-only">{{ t("toolbar.textAlign") }}</span>
+            <CornerBottomRight/>
           </span>
         </Tooltip>
       </DropdownMenuTrigger>
     </ToolbarButton>
     <DropdownMenuContent
-      align="start"
+      align="center"
       side="bottom"
       :side-offset="6"
       class="z-50 grid w-64 text-xs bg-secondary border border-primary"
@@ -58,7 +62,7 @@ const { t } = useI18n()
           <span>{{ t("toolbar.alignLeft") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-muted px-1.5 font-mono text-[8px] font-medium text-muted-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium text-foreground opacity-100"
         >
           Ctrl Shift L
         </kbd>
@@ -73,7 +77,7 @@ const { t } = useI18n()
           <span>{{ t("toolbar.alignCenter") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-muted px-1.5 font-mono text-[8px] font-medium text-muted-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium text-foreground opacity-100"
         >
           Ctrl Shift E
         </kbd>
@@ -88,7 +92,7 @@ const { t } = useI18n()
           <span>{{ t("toolbar.alignRight") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-muted px-1.5 font-mono text-[8px] font-medium text-muted-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium text-foreground opacity-100"
         >
           Ctrl Shift R
         </kbd>
@@ -103,7 +107,7 @@ const { t } = useI18n()
           <span>{{ t("toolbar.alignJustify") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-muted px-1.5 font-mono text-[8px] font-medium text-muted-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium text-foreground opacity-100"
         >
           Ctrl Shift J
         </kbd>
@@ -117,7 +121,7 @@ const { t } = useI18n()
           <span>{{ t("toolbar.noAlignment") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-muted px-1.5 font-mono text-[8px] font-medium ml-auto text-muted-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium ml-auto text-foreground opacity-100"
         >
           Ctrl Shift L
         </kbd>

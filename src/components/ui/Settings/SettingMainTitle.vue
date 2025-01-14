@@ -24,7 +24,7 @@ const { t } = useI18n()
       :class="
         settings.show_heading_one_preview ?
           'hover:!bg-primary bg-primary hover:text-primary-foreground text-primary-foreground'
-        : 'text-muted-foreground'
+        : 'text-foreground'
       "
     >
       <Heading1 class="size-5" />

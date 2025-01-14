@@ -23,7 +23,7 @@ const { t } = useI18n()
       spellcheck="false"
       ref="focus_title_textarea"
       @keyup.ctrl.enter="db_store.loaded_id ? null : db_store.create_document()"
-      v-model="db_store.document_name"
+      v-model.trim="db_store.document_name"
       style="field-sizing: content"
       class="w-full pr-8 px-2 py-0.5 overflow-hidden ring-1 outline-none resize-none leading-8 max-h-9 md:max-h-auto min-h-8 TextareaProjectName bg-secondary/30 text-foreground ring-secondary focus-within:ring-primary placeholder:text-primary/50 hover:ring-primary ring-inset focus:max-h-full line-clamp-1 focus:overflow-visible focus:line-clamp-none"
     />

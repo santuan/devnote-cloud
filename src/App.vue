@@ -34,8 +34,13 @@ watchEffect(() => {
 </template>
 
 <style>
+
+.dxc-login-dlg > div:first-child {
+  @apply !bg-background !opacity-90;
+}
+
 .dxc-login-dlg div div {
-  @apply !bg-background grid gap-3 !shadow-none !text-foreground !text-sm !font-mono !max-w-sm;
+  @apply !bg-background grid gap-3 !shadow-none !text-foreground !text-sm !font-mono !max-w-sm !border-primary;
 }
 
 .dxc-login-dlg div div input {

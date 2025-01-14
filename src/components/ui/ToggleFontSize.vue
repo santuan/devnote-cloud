@@ -7,12 +7,13 @@ import {
   DropdownMenuGroup,
   DropdownMenuPortal,
 } from "reka-ui"
-import { AArrowUp, AArrowDown } from "lucide-vue-next"
+import { AArrowUp, AArrowDown, Check } from "lucide-vue-next"
 import { onMounted } from "vue"
 import { useDocumentStore } from "@/stores/document"
 import { useI18n } from "vue-i18n"
 import { useStorage } from "@vueuse/core"
 import Tooltip from "@/components/ui/Tooltip.vue"
+import CornerBottomRight from "@/assets/corner-bottom-right.vue"
 
 const document_store = useDocumentStore()
 const appFontSize = useStorage("appFontSize", "app-font-size-md")
@@ -31,68 +32,74 @@ onMounted(() => {
 
 <template>
   <DropdownMenuRoot>
-    <DropdownMenuTrigger class="interactive">
+    <DropdownMenuTrigger class="interactive relative group">
       <Tooltip
         :name="t('settings.fontsize')"
         :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
         :align="'end'"
       >
         <span
-          class="flex items-center justify-center border hover:bg-secondary/80 border-secondary bg-background size-8"
+          class="flex items-center justify-center  border hover:bg-secondary/80 border-secondary bg-background size-8"
         >
           <AArrowDown class="AArrowDown size-5" />
           <AArrowUp class="AArrowUp size-5" />
           <span class="sr-only"> {{ t("settings.fontsizeDescription") }}</span>
         </span>
+        <CornerBottomRight/>
       </Tooltip>
     </DropdownMenuTrigger>
-    <DropdownMenuPortal >
+    <DropdownMenuPortal>
       <DropdownMenuContent
         :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
         :align="document_store.show_sidebar_documents ? 'end' : 'start'"
-        class="z-10 grid w-44 text-xs bg-secondary border font-mono text-foreground border-primary"
-        :side-offset="7"
+        class="z-10 grid w-48 text-xs bg-secondary border font-mono text-foreground border-primary"
+        :side-offset="5"
       >
         <DropdownMenuGroup>
           <DropdownMenuItem
             @click="toggleFontSize('app-font-size-xs')"
-            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            class="p-2 flex justify-start gap-1 w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
             :class="appFontSize === 'app-font-size-xs' ? 'text-primary' : ''"
           >
             <span>{{ t("settings.fontsizexs") }} </span>
             <span class="opacity-50 scale-90">.75rem</span>
+            <Check class="size-4 ml-auto" v-show="appFontSize === 'app-font-size-xs' ? 'text-primary' : ''" />
           </DropdownMenuItem>
           <DropdownMenuItem
             @click="toggleFontSize('app-font-size-sm')"
-            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            class="p-2 flex justify-start gap-1 w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
             :class="appFontSize === 'app-font-size-sm' ? 'text-primary' : ''"
           >
             <span>{{ t("settings.fontsizesm") }} </span>
             <span class="opacity-50 scale-90">.875rem</span>
+            <Check class="size-4 ml-auto" v-show="appFontSize === 'app-font-size-sm' ? 'text-primary' : ''" />
           </DropdownMenuItem>
           <DropdownMenuItem
             @click="toggleFontSize('app-font-size-md')"
-            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            class="p-2 flex justify-start gap-1 w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
             :class="appFontSize === 'app-font-size-md' ? 'text-primary' : ''"
           >
             <span>{{ t("settings.fontsizemd") }} </span>
             <span class="opacity-50 scale-90"> 1rem</span>
+            <Check class="size-4 ml-auto" v-show="appFontSize === 'app-font-size-md' ? 'text-primary' : ''" />
           </DropdownMenuItem>
           <DropdownMenuItem
             @click="toggleFontSize('app-font-size-lg')"
-            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            class="p-2 flex justify-start gap-1 w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
             :class="appFontSize === 'app-font-size-lg' ? 'text-primary' : ''"
           >
             <span>{{ t("settings.fontsizelg") }} </span>
             <span class="opacity-50 scale-90">1.125rem</span>
+            <Check class="size-4 ml-auto" v-show="appFontSize === 'app-font-size-lg' ? 'text-primary' : ''" />
           </DropdownMenuItem>
           <DropdownMenuItem
             @click="toggleFontSize('app-font-size-xl')"
-            class="p-2 flex justify-between w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
+            class="p-2 flex justify-start gap-1 w-full outline-none hover:bg-secondary-foreground/10 focus:ring-1 focus:ring-primary focus:bg-primary/20 focus:ring-inset"
             :class="appFontSize === 'app-font-size-xl' ? 'text-primary' : ''"
           >
             <span>{{ t("settings.fontsizexl") }} </span>
             <span class="opacity-50 scale-90">1.25rem</span>
+            <Check class="size-4 ml-auto" v-show="appFontSize === 'app-font-size-xl' ? 'text-primary' : ''" />
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

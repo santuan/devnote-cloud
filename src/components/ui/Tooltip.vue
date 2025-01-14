@@ -46,7 +46,7 @@ const props = defineProps({
         <TooltipContent
           class="print:!hidden ring-primary ring-1 select-none max-w-80 min-h-7 bg-secondary px-2.5 py-1.5 flex gap-2 items-center justify-center"
           :class="props.shortcut ? 'flex-col' : ' '"
-          :side-offset="8"
+          :side-offset="6"
           :side="props.side"
           :align="props.align"
         >

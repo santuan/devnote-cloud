@@ -40,7 +40,7 @@ function focusOnTitle() {
 </script>
 
 <template>
-  <div class="px-0 mx-1 mb-1 mt-2">
+  <div class="px-0 mx-1 mb-1 mt-1">
     <button
       @click="db_store.loaded_id === '' ? null : new_document()"
       class="CreateNewButton flex items-center my-0.5 justify-center gap-2 text-xs min-h-8 w-full text-left bg-primary focus-within:ring-1 ring-primary"

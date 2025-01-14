@@ -16,6 +16,7 @@ import { storeToRefs } from "pinia"
 import { Table } from "lucide-vue-next"
 import { useI18n } from "vue-i18n"
 import Tooltip from "@/components/ui/Tooltip.vue"
+import CornerBottomRight from "@/assets/corner-bottom-right.vue"
 
 const document = useEditorStore()
 const { editor } = storeToRefs(document)
@@ -26,7 +27,7 @@ const { t } = useI18n()
   <DropdownMenuRoot>
     <ToolbarButton as-child>
       <DropdownMenuTrigger
-        class="data-[state=open]:!bg-primary data-[state=open]:text-primary-foreground relative"
+        class="data-[state=open]:!bg-primary group data-[state=open]:text-primary-foreground relative"
       >
         <Tooltip
           :name="`${t('toolbar.table')} (experimental)`"
@@ -40,6 +41,7 @@ const { t } = useI18n()
             <Table class="size-4 shrink-0" />
           </span>
           <span class="sr-only">{{ t("toolbar.table") }}</span>
+          <CornerBottomRight/>
         </Tooltip>
       </DropdownMenuTrigger>
     </ToolbarButton>

@@ -38,11 +38,13 @@ const { focus_documents } = storeToRefs(focus)
       <div
         v-if="!isMobile"
         class="shrink-0 flex justify-end gap-2 opacity-60 text-xs text-foreground"
+        :class="allItemsTodo?.length <= 1 ? '!opacity-10' : ' '"
       >
         <kbd class="scale-90">ctrl</kbd>
         <button
           @click="db_store.navigate_document('prev')"
           class="flex justify-center items-center bg-background outline-2 outline-primary hover:outline-offset-2 focus-visible:outline-offset-2 focus-visible:outline-dotted"
+          :disabled="allItemsTodo?.length <= 1"
         >
           <ArrowUp class="size-4 opacity-80" />
           <span class="sr-only">Navigate prev</span>
@@ -50,15 +52,16 @@ const { focus_documents } = storeToRefs(focus)
         <button
           @click="db_store.navigate_document('next')"
           class="flex justify-center items-center bg-background outline-2 outline-primary hover:outline-offset-2 focus-visible:outline-offset-2 focus-visible:outline-dotted"
+          :disabled="allItemsTodo?.length <= 1"
         >
           <ArrowDown class="size-4 opacity-80" />
           <span class="sr-only">Navigate next</span>
         </button>
       </div>
     </div>
-    <div class="overflow-y-auto pl-1 SidebarDocuments overflow-x-hidden h-[calc(100dvh-7rem)]">
-      <ScrollAreaRoot class="w-full h-full rounded overflow-hidden" style="--scrollbar-size: 10px">
-        <ScrollAreaViewport class="w-full h-full rounded">
+    <div class="overflow-y-auto SidebarDocuments overflow-x-hidden h-[calc(100dvh-6.7rem)]">
+      <ScrollAreaRoot class="w-full h-full overflow-hidden" style="--scrollbar-size: 10px">
+        <ScrollAreaViewport class="w-full h-full outline-primary/70">
           <div
             class="py-1 px-0.5 flex flex-col justify-start items-start relative gap-1 w-full min-h-24"
             v-if="allItemsTodo"

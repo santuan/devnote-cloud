@@ -27,21 +27,11 @@ const { t } = useI18n()
       :class="document.show_sidebar_documents ? 'grid-cols-6 gap-0.5' : ' grid-cols-1 gap-1 mt-1'"
     >
       <ButtonCreateDocumentCollapse v-if="!document.show_sidebar_documents" />
-      <div>
-        <DialogSettings />
-      </div>
-      <div>
-        <ToggleTheme />
-      </div>
-      <div>
-        <ToggleFontSize />
-      </div>
-      <div>
-        <DialogCommandMenu />
-      </div>
-      <div>
-        <ToggleEditable />
-      </div>
+      <DialogSettings />
+      <ToggleTheme />
+      <ToggleFontSize />
+      <DialogCommandMenu />
+      <ToggleEditable />
       <div>
         <Tooltip
           shortcut="Ctrl M"
