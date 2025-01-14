@@ -66,8 +66,6 @@ onMounted(() => {
     </DropdownMenuTrigger>
     <DropdownMenuPortal>
       <DropdownMenuContent
-        :align="document_store.show_sidebar_documents ? 'center' : 'center'"
-        :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
         class="z-10 grid w-64 text-xs font-mono text-foreground bg-background border border-primary"
         :side-offset="5"
       >
@@ -92,9 +90,9 @@ onMounted(() => {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator class="border-foreground border-t" />
-        <DropdownMenuLabel class="px-3 flex pt-2 justify-between text-xs text-center text-foreground/50">
+        <DropdownMenuLabel class="px-3 flex gap-2 pt-2 justify-center text-xs text-center text-foreground/50">
           Primary Color:
-          {{ colorTheme }}
+          <span class="text-primary">{{ colorTheme }}</span>
         </DropdownMenuLabel>
         <DropdownMenuGroup class="flex justify-evenly my-2 gap-2 items-center w-full p-1">
           <DropdownMenuItem

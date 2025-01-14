@@ -6,6 +6,7 @@ import Tooltip from "@/components/ui/Tooltip.vue"
 import { Heading } from "lucide-vue-next"
 import { useFocusStore } from "@/stores/focus"
 import { useDocumentStore } from "@/stores/document"
+import CornerBottomRight from "@/assets/corner-bottom-right.vue"
 
 const focus = useFocusStore()
 const document = useDocumentStore()
@@ -32,6 +33,7 @@ const { t } = useI18n()
       :side="'bottom'"
       :align="'end'"
       shortcut="ctrl shift alt &uarr; "
+      class="group relative"
     >
       <button
         class="absolute font-serif top-0.5 md:top-1 right-0.5 md:right-0 size-9 flex justify-center items-center z-10 shrink-0 ring-1 ring-secondary ring-inset group-focus-within:ring-1 group-hover:ring-1 group-hover:ring-primary group-focus-within:ring-primary"
@@ -44,6 +46,14 @@ const { t } = useI18n()
         @click="show_editor_toolbar = !show_editor_toolbar"
       >
         <span><Heading class="h-3" /></span>
+        <CornerBottomRight
+          class="right-1 bottom-1"
+          :class="[
+            show_editor_toolbar ?
+              ' !fill-background  '
+            : '!fill-primary ',
+          ]"
+        />
       </button>
     </Tooltip>
   </div>

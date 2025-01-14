@@ -52,7 +52,7 @@ onMounted(() => {
       <DropdownMenuContent
         :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
         :align="document_store.show_sidebar_documents ? 'end' : 'start'"
-        class="z-10 grid w-48 text-xs bg-secondary border font-mono text-foreground border-primary"
+        class="z-10 grid w-48 text-xs bg-background border font-mono text-foreground border-primary"
         :side-offset="5"
       >
         <DropdownMenuGroup>

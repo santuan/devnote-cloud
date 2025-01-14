@@ -18,7 +18,7 @@ const { t } = useI18n()
 
 <template>
   <div
-    class="flex items-center justify-between mt-0.5 group focus:ring-none focus:ring-secondary/20 outline-primary focus:ring-offset-1"
+    class="flex items-center justify-between mt-0.5  focus:ring-none focus:ring-secondary/20 outline-primary focus:ring-offset-1"
     :class="document.show_sidebar_documents ? 'ml-1 mr-0.5 pr-0.5' : ' flex-col px-1 pb-2'"
   >
     <DropdownLogo />
@@ -59,9 +59,9 @@ const { t } = useI18n()
     >
       <button
         @click="document.show_sidebar_documents = !document.show_sidebar_documents"
-        class="absolute flex flex-col justify-end items-center z-10 inset-1 py-2 md:py-5 bottom-2 hover:!border-1 top-[16rem]"
+        class="absolute flex flex-col justify-end items-center group z-10 inset-1 py-2 md:py-5 bottom-2 hover:!border-1 top-[16rem]"
       >
-        <ArrowRightToLine class="mx-auto duration-100 opacity-25 size-4 group-hover:opacity-90" />
+        <ArrowRightToLine class="mx-auto duration-100 opacity-25 size-4  group-hover:opacity-90" />
         <span class="sr-only">{{ t("verb.close") }} panel</span>
       </button>
     </Tooltip>

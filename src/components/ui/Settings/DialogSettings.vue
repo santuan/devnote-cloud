@@ -64,7 +64,7 @@ const { show_settings } = storeToRefs(modal)
           <span>{{ isMobile ? "touch" : t("settings.mouseKeyboard") }}.</span>
         </DialogDescription>
         <div
-          class="w-full border h-[85vh] sm:h-[78vh] mt-6 md:h-[70vh] overflow-y-auto group border-secondary group-focus-within:ring-primary/70 group-focus-within:ring-1 focus:!ring-primary focus:!ring-2 outline-none"
+          class="w-full border h-[85vh] sm:h-[78vh] mt-6 md:h-[70vh] overflow-y-auto  border-secondary focus-within:ring-primary/70 focus-within:ring-1 focus:!ring-primary focus:!ring-2 outline-none"
           style="--scrollbar-size: 10px"
         >
           <article class="max-w-full p-3 mx-auto prose dark:prose-invert">
