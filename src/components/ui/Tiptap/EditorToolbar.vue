@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ToolbarRoot } from "reka-ui"
+import { ToolbarRoot, ToolbarSeparator } from "reka-ui"
 import { storeToRefs } from "pinia"
 import { useEditorStore } from "@/stores/editor"
 const editor_store = useEditorStore()
@@ -14,7 +14,7 @@ import ToolbarCharacters from "./toolbar/ToolbarCharacters.vue"
 import ToolbarTextAlign from "./toolbar/ToolbarTextAlign.vue"
 import ToolbarList from "./toolbar/ToolbarList.vue"
 import ToolbarQuote from "./toolbar/ToolbarQuote.vue"
-import ToolbarSeparator from "./toolbar/ToolbarSeparator.vue"
+import ToolbarTextSeparator from "./toolbar/ToolbarSeparator.vue"
 import ToolbarInlineCode from "./toolbar/ToolbarInlineCode.vue"
 import ToolbarCodeBlock from "./toolbar/ToolbarCodeBlock.vue"
 import ToolbarLinks from "./toolbar/ToolbarLinks.vue"
@@ -22,22 +22,30 @@ import ToolbarClear from "./toolbar/ToolbarClear.vue"
 </script>
 
 <template>
-  <div class="pt-0.5 z-10 relative bg-background print:hidden" v-if="editor">
-    <div class="relative grid w-full max-w-full gap-1 mx-auto control-group">
-      <ToolbarRoot class="flex justify-start select-none mb-0.5 button-group md:w-auto">
-        <ToolbarCodeBlock />
+  <div class="py-1 z-10 relative bg-background print:hidden" v-if="editor">
+    <div class="relative grid w-full max-w-full mx-auto control-group">
+      <ToolbarRoot
+        class="flex gap-0.5 gap-y-1 justify-start select-none  button-group items-center md:w-auto"
+      >
         <ToolbarUndo />
         <ToolbarRedo />
         <ToolbarHeadingSelector />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
         <ToolbarCharacters />
-        <ToolbarTextAlign />
         <ToolbarInlineCode />
-        <ToolbarSeparator />
-        <ToolbarQuote />
+        <ToolbarTextAlign />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
+        <ToolbarCodeBlock />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
         <ToolbarList />
-        <ToolbarLinks />
-        <ToolbarMedia />
+        <ToolbarQuote />
+        <ToolbarTextSeparator />
         <ToolbarTable />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
+        <ToolbarLinks />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
+        <ToolbarMedia />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
         <ToolbarClear />
       </ToolbarRoot>
     </div>
@@ -50,7 +58,7 @@ import ToolbarClear from "./toolbar/ToolbarClear.vue"
 }
 
 .button-group button {
-  @apply border border-secondary focus-within:border-primary outline-none h-[2.1rem] min-w-8 max-w-8 xl:max-w-full xl:flex-1 text-sm focus-visible:border-primary hover:!border-primary flex justify-center items-center;
+  @apply border border-secondary focus-within:border-primary outline-none h-[2.1rem] min-w-8 max-w-8 xl:max-w-full text-sm focus-visible:border-primary hover:!border-primary flex justify-center items-center;
   /* @apply @sm:bg-blue-600 @xs:bg-purple-600 @md:bg-yellow-600 @lg:bg-pink-600 @3xl:bg-gray-600 @xl:bg-red-600 @2xl:bg-green-600 @4xl:bg-red-600 @5xl:bg-emerald-600 */
   /* flex: 1; */
 }

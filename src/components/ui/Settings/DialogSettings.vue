@@ -43,6 +43,7 @@ const { show_settings } = storeToRefs(modal)
     <Tooltip
       :name="t('settings.title')"
       :side="document.show_sidebar_documents ? 'bottom' : 'right'"
+      shortcut="Ctrl shift alt s"
     >
       <DialogTrigger
         class="flex items-center justify-center border interactive border-secondary hover:bg-secondary/80 bg-background size-8"

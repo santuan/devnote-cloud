@@ -18,9 +18,10 @@ const { t } = useI18n()
     <ToolbarButton
       @click="editor.chain().focus().toggleCodeBlock().run()"
       :class="{ 'is-active': editor.isActive('codeBlock') }"
-      class="interactive !min-w-24 md:!min-w-20"
+      class="interactive gap-1 !min-w-24 md:!min-w-20"
       :value="t('toolbar.codeBlock')"
     >
+      <p class="text-">Code</p>
       <Code />
       <span class="sr-only">{{ t("toolbar.codeBlock") }}</span>
     </ToolbarButton>

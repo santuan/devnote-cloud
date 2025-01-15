@@ -174,7 +174,6 @@ onBeforeUnmount(() => {
       :class="[
         toolbar ? 'with-toolbar' : '',
         content_editable ? 'is-editable' : 'is-preview',
-        settings.show_heading_one_preview ? '' : 'hide_heading_one_preview',
         db_store.loaded_id === '' || editor.isEmpty ? 'is-empty' : '',
       ]"
       style="--scrollbar-size: 10px"
@@ -283,9 +282,6 @@ onBeforeUnmount(() => {
     }
   }
 
-  &.hide_heading_one_preview {
-    @apply max-h-[calc(100dvh-7rem)] md:max-h-[calc(100dvh-1rem)] min-h-screen;
-  }
 }
 
 .tiptap {

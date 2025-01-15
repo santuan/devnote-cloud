@@ -46,7 +46,7 @@ const { t } = useI18n()
       >
         <h2
           v-show="!content_editable"
-          class="px-0 md:pl-5 md:p-4 mb-0 font-serif text-4xl md:text-5xl text-foreground md:pb-3.5 font-black text-balance"
+          class="px-0 md:pl-5 md:p-4 mb-0 font-serif text-4xl md:text-5xl text-foreground md:pb-[1.155rem] font-black text-balance"
           :class="settings.show_heading_one_preview ? '' : 'sr-only'"
         >
           {{ db_store.document_name }}

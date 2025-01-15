@@ -45,8 +45,8 @@ function focusOnTitle() {
       @click="db_store.loaded_id === '' ? null : new_document()"
       class="CreateNewButton flex items-center my-0.5 justify-center gap-2 text-xs min-h-8 w-full text-left bg-primary focus-within:ring-1 ring-primary"
       :class="{
-        '!bg-secondary !ring-secondary !text-primary-foreground': db_store.loaded_id === null,
-        '!bg-secondary/30 !text-muted-foreground/50 ': db_store.loaded_id === '',
+        '!bg-red-600 !ring-secondary !text-primary-foreground': db_store.loaded_id === null,
+        '!bg-secondary !text-muted-foreground/50 ': db_store.loaded_id === '',
       }"
     >
       <Plus v-show="db_store.loaded_id !== ''" class="size-4 text-primary-foreground" />

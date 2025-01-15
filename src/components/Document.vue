@@ -1,6 +1,5 @@
 <script setup>
 import AlertLogout from "@/components/ui/AlertLogout.vue"
-import DialogInfo from "@/components/ui/DialogInfo.vue"
 import AlertUnsavedChanges from "@/components/ui/AlertUnsavedChanges.vue"
 import DeleteDocument from "@/components/ui/ButtonDeleteDocument.vue"
 import DocumentEditor from "@/components/DocumentEditor.vue"
@@ -15,6 +14,5 @@ import SplitterGroup from "@/components/ui/SplitterGroup.vue"
     <DeleteDocument />
     <AlertUnsavedChanges />
     <AlertLogout />
-    <DialogInfo />
   </div>
 </template>

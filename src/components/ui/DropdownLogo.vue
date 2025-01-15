@@ -5,6 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuPortal,
+  DropdownMenuSeparator,
 } from "reka-ui"
 import Tooltip from "@/components/ui/Tooltip.vue"
 
@@ -94,12 +95,6 @@ const focusEditor = () => {
           <p class="text-primary sr-only font-semibold px-2 my-2">
             {{ t("sidebar.navigation") }}
           </p>
-          <p
-            class="text-primary/70 !select-all font-bold text-sm px-2 my-2"
-            v-if="user?.value?.name !== 'Unauthorized'"
-          >
-            {{ user?.value?.name }}
-          </p>
           <DropdownMenuItem
             class="text-foreground outline-none focus-visible:bg-primary/30 text-xs hover:bg-primary/20 px-2 py-2 text-left"
             @click="focusDocumentsList()"
@@ -118,12 +113,13 @@ const focusEditor = () => {
           >
             {{ t("commandBar.focusEditor") }}
           </DropdownMenuItem>
-          <DropdownMenuItem
-            class="text-foreground outline-none focus-visible:bg-primary/30 text-xs hover:bg-primary/20 px-2 py-2 text-left"
-            @click="modal_store.show_info = true"
+          <DropdownMenuSeparator class="border-t border-primary/20"/>
+          <p
+            class="text-primary/70 !select-all font-bold text-sm px-2 my-2"
+            v-if="user?.value?.name !== 'Unauthorized'"
           >
-            {{ t("sidebar.about") }}
-          </DropdownMenuItem>
+            {{ user?.value?.name }}
+          </p>
           <DropdownMenuItem
             v-if="user?.value?.name !== 'Unauthorized'"
             class="text-foreground outline-none focus-visible:bg-primary/30 text-xs hover:bg-primary/20 px-2 py-2 text-left"

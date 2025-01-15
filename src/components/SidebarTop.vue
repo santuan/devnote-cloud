@@ -10,6 +10,7 @@ import ToggleEditable from "@/components/ui/ToggleEditable.vue"
 import ToggleFontSize from "@/components/ui/ToggleFontSize.vue"
 import ToggleTheme from "@/components/ui/ToggleTheme.vue"
 import Tooltip from "@/components/ui/Tooltip.vue"
+import DialogInfo from "./ui/DialogInfo.vue"
 
 const document = useDocumentStore()
 
@@ -24,14 +25,16 @@ const { t } = useI18n()
     <DropdownLogo />
     <div
       class="grid"
-      :class="document.show_sidebar_documents ? 'grid-cols-6 gap-0.5' : ' grid-cols-1 gap-1 mt-1'"
+      :class="document.show_sidebar_documents ? 'grid-cols-7 gap-0.5' : ' grid-cols-1 gap-1 mt-1'"
     >
       <ButtonCreateDocumentCollapse v-if="!document.show_sidebar_documents" />
+      <DialogInfo/>
       <DialogSettings />
       <ToggleTheme :side="document.show_sidebar_documents ? 'bottom' : 'right'" />
       <ToggleFontSize />
       <DialogCommandMenu />
       <ToggleEditable />
+      
       <div>
         <Tooltip
           shortcut="Ctrl M"
@@ -59,7 +62,7 @@ const { t } = useI18n()
     >
       <button
         @click="document.show_sidebar_documents = !document.show_sidebar_documents"
-        class="absolute flex flex-col justify-end items-center group z-10 inset-1 py-2 md:py-5 bottom-2 hover:!border-1 top-[16rem]"
+        class="absolute flex flex-col justify-end items-center group z-10 inset-1 py-2 md:py-5 bottom-2 hover:!border-1 top-[18.25rem]"
       >
         <ArrowRightToLine class="mx-auto opacity-25 size-4  group-hover:opacity-90" />
         <span class="sr-only">{{ t("verb.close") }} panel</span>

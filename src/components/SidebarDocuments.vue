@@ -37,10 +37,15 @@ const { focus_documents } = storeToRefs(focus)
       </h2>
       <div
         v-if="!isMobile"
-        class="shrink-0 flex justify-end gap-2 opacity-60 text-xs text-foreground"
+        class="shrink-0 flex justify-end gap-0.5 opacity-60 text-xs text-foreground"
         :class="allItemsTodo?.length <= 1 ? '!opacity-10' : ' '"
       >
-        <kbd class="scale-90">ctrl</kbd>
+        <kbd class="bg-background px-1">
+          ctrl 
+          <span class="opacity-30">+</span>
+          shift
+          <span class="opacity-30">+</span>
+        </kbd>
         <button
           @click="db_store.navigate_document('prev')"
           class="flex justify-center items-center bg-background outline-2 outline-primary hover:outline-offset-2 focus-visible:outline-offset-2 focus-visible:outline-dotted"

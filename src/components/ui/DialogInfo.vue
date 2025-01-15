@@ -7,31 +7,38 @@ import {
   DialogPortal,
   DialogRoot,
   DialogTitle,
+  DialogTrigger,
   ScrollAreaRoot,
   ScrollAreaScrollbar,
   ScrollAreaThumb,
   ScrollAreaViewport,
 } from "reka-ui"
 
-import { ref } from "vue"
 import { useI18n } from "vue-i18n"
-import { useMagicKeys, whenever } from "@vueuse/core"
 import { useModalStore } from "@/stores/modal"
-import { ArrowDown, ArrowUp, X } from "lucide-vue-next"
+import { ArrowDown, ArrowUp, Info, X } from "lucide-vue-next"
+import Tooltip from "./Tooltip.vue"
+import { useDocumentStore } from "@/stores/document"
+const document = useDocumentStore()
 
 const modal = useModalStore()
-const open = ref(false)
-const keys = useMagicKeys()
-const magicAbout = keys["ctrl+alt+q"]
 const { t, locale } = useI18n()
-
-whenever(magicAbout, (n) => {
-  if (n) open.value = true
-})
 </script>
 
 <template>
   <DialogRoot v-model:open="modal.show_info">
+    <Tooltip
+      :name="t('sidebar.about')"
+      :align="document.show_sidebar_documents ? 'end' : 'center'"
+      :side="document.show_sidebar_documents ? 'bottom' : 'right'"
+    >
+      <DialogTrigger
+        class="flex items-center justify-center border interactive border-secondary hover:bg-secondary/80 bg-background size-8"
+      >
+        <Info class="size-4" />
+        <span class="sr-only">{{ t("sidebar.about") }}</span>
+      </DialogTrigger>
+    </Tooltip>
     <DialogPortal>
       <DialogOverlay class="bg-background/95 fixed inset-0 z-[60]" />
       <DialogContent
@@ -87,10 +94,16 @@ whenever(magicAbout, (n) => {
                     <p><code>Ctrl M</code> Colapsar el menu.</p>
                   </li>
                   <li>
-                    <p><code class="inline-flex gap-1">Ctrl <ArrowUp class="size-4" /></code> Seleccionar documento anterior.</p>
+                    <p>
+                      <code class="inline-flex gap-1">Ctrl <ArrowUp class="size-4" /></code>
+                      Seleccionar documento anterior.
+                    </p>
                   </li>
                   <li>
-                    <p><code class="inline-flex gap-1">Ctrl <ArrowDown class="size-4" /></code> Seleccionar documento siguiente.</p>
+                    <p>
+                      <code class="inline-flex gap-1">Ctrl <ArrowDown class="size-4" /></code>
+                      Seleccionar documento siguiente.
+                    </p>
                   </li>
                   <li>
                     <p><code>Ctrl Alt .</code> Expande el editor de texto a todo el ancho.</p>
@@ -99,10 +112,10 @@ whenever(magicAbout, (n) => {
                     <p><code>Shift Delete</code> Eliminar documento en curso.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt &larr</code> Saltar al menú.</p>
+                    <p><code>Ctrl Shift Alt &larr;</code> Saltar al menú.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt &rarr</code> Saltar al titulo actual.</p>
+                    <p><code>Ctrl Shift Alt &rarr;</code> Saltar al titulo actual.</p>
                   </li>
                   <li>
                     <p><code>Ctrl Shift Alt E</code> Saltar al editor de texto.</p>
@@ -152,10 +165,16 @@ whenever(magicAbout, (n) => {
                     <p><code>Ctrl M</code> Collapse the menu.</p>
                   </li>
                   <li>
-                    <p><code class="inline-flex gap-1">Ctrl <ArrowUp class="size-4" /></code> Select previous document.</p>
+                    <p>
+                      <code class="inline-flex gap-1">Ctrl <ArrowUp class="size-4" /></code> Select
+                      previous document.
+                    </p>
                   </li>
                   <li>
-                    <p><code class="inline-flex gap-1">Ctrl <ArrowDown class="size-4" /></code> Select next document.</p>
+                    <p>
+                      <code class="inline-flex gap-1">Ctrl <ArrowDown class="size-4" /></code>
+                      Select next document.
+                    </p>
                   </li>
                   <li>
                     <p><code>Ctrl Alt .</code> Expand/Collapse the editing area.</p>
@@ -167,13 +186,13 @@ whenever(magicAbout, (n) => {
                     <p><code>ctrl shift alt &uarr;</code> Toogle editor typography options.</p>
                   </li>
                   <li>
-                    <p><kbd>ctrl shift alt &larr;</kbd> Focus on sidebar.</p>
+                    <p><code>ctrl shift alt &larr;</code> Focus on sidebar.</p>
                   </li>
                   <li>
-                    <p><kbd>ctrl shift alt &rarr;</kbd> Focus on title.</p>
+                    <p><code>ctrl shift alt &rarr;</code> Focus on title.</p>
                   </li>
                   <li>
-                    <p><kbd>ctrl shift alt &darr;</kbd> Focus on editor.</p>
+                    <p><code>ctrl shift alt &darr;</code> Focus on editor.</p>
                   </li>
                 </ul>
               </article>

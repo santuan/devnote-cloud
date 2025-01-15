@@ -24,8 +24,8 @@ export const useMagicKeysStore = defineStore("magic-keys", () => {
   const magic_focus_editor = keys["ctrl+shift+alt+e"]
   const magic_focus_sidebar = keys["ctrl+shift+alt+ArrowLeft"]
   const magic_focus_title = keys["ctrl+shift+alt+ArrowRight"]
-  const magic_next_document = keys["ctrl+ArrowDown"]
-  const magic_previous_document = keys["ctrl+ArrowUp"]
+  const magic_next_document = keys["ctrl+shift+ArrowDown"]
+  const magic_previous_document = keys["ctrl+shift+ArrowUp"]
   const magic_show_settings = keys["ctrl+shift+alt+s"]
   const magic_toggle_preview = keys["ctrl+alt+p"]
 

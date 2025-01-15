@@ -99,12 +99,12 @@ onMounted(() => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator class="border-primary/20 border-t" />
         <DropdownMenuLabel
-          class="px-3 flex gap-2 pt-2 justify-center text-xs text-center text-foreground/50"
+          class="px-3 flex gap-2 pt-2 justify-center text-xs text-center text-foreground/80"
         >
           Primary Color:
           <span class="text-primary">{{ colorTheme }}</span>
         </DropdownMenuLabel>
-        <DropdownMenuGroup class="flex justify-evenly my-2 gap-2 items-center w-full p-1">
+        <DropdownMenuGroup class="flex justify-evenly my-2 gap-0 items-center w-full p-1">
           <DropdownMenuItem
             @click="toggleColorTheme('theme-rose')"
             class="outline-none size-5 bg-rose-500 data-[highlighted]:!opacity-100 hover:ring-2 focus-visible:ring-2 ring-rose-500/50 ring-offset-1 opacity-30"

@@ -1,12 +1,13 @@
-import { allItemsTodo } from "@/composables/queries"
-import { db } from "@/db"
-import { defineStore } from "pinia"
 import { ref, shallowRef } from "vue"
-import { toast } from "vue-sonner"
-import { useDocumentStore } from "@/stores/document"
-import { useI18n } from "vue-i18n"
-import { useModalStore } from "@/stores/modal"
+import { defineStore } from "pinia"
+import { db } from "@/db"
+
+import { allItemsTodo } from "@/composables/queries"
 import { useUnsavedChanges } from "@/composables/useUnsavedChanges"
+import { useDocumentStore } from "@/stores/document"
+import { useModalStore } from "@/stores/modal"
+import { useI18n } from "vue-i18n"
+import { toast } from "vue-sonner"
 
 export const useDatabaseStore = defineStore("database", () => {
   const { t } = useI18n()
