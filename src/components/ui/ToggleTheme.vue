@@ -107,10 +107,10 @@ onMounted(() => {
         <DropdownMenuGroup class="flex justify-evenly my-2 gap-0 items-center w-full p-1">
           <DropdownMenuItem
             @click="toggleColorTheme('theme-rose')"
-            class="outline-none size-5 bg-rose-500 data-[highlighted]:!opacity-100 hover:ring-2 focus-visible:ring-2 ring-rose-500/50 ring-offset-1 opacity-30"
+            class="outline-none size-5 bg-rose-500 data-[highlighted]:!opacity-100 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
             :class="
               colorTheme === 'theme-rose' ?
-                ' !ring-primary/80 !bg-primary/90 ring-2 !ring-offset-1 !opacity-100'
+                ' !ring-primary/80 !bg-primary/10 ring-4 !ring-offset-0 !opacity-100'
               : ''
             "
           >
@@ -118,10 +118,10 @@ onMounted(() => {
           </DropdownMenuItem>
           <DropdownMenuItem
             @click="toggleColorTheme('theme-blue')"
-            class="bg-blue-500 outline-none data-[highlighted]:!opacity-100 size-5 hover:ring-2 focus-visible:ring-2 ring-blue-500/50 ring-offset-1 opacity-30"
+            class="bg-blue-500 outline-none data-[highlighted]:!opacity-100 size-5 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
             :class="
               colorTheme === 'theme-blue' ?
-                ' !ring-primary/80 !bg-primary/90 ring-2 !ring-offset-1 !opacity-100'
+                ' !ring-primary/80 !bg-primary/10 ring-4 !ring-offset-0 !opacity-100'
               : ''
             "
           >
@@ -129,10 +129,10 @@ onMounted(() => {
           </DropdownMenuItem>
           <DropdownMenuItem
             @click="toggleColorTheme('theme-green')"
-            class="bg-green-500 outline-none data-[highlighted]:!opacity-100 size-5 hover:ring-2 focus-visible:ring-2 ring-green-500/50 ring-offset-1 opacity-30"
+            class="bg-green-500 outline-none data-[highlighted]:!opacity-100 size-5 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
             :class="
               colorTheme === 'theme-green' ?
-                ' !ring-primary/80 !bg-primary/90 ring-2 !ring-offset-1 !opacity-100'
+                ' !ring-primary/80 !bg-primary/10 !ring-4 !ring-offset-0 !opacity-100'
               : ''
             "
           >
@@ -140,10 +140,10 @@ onMounted(() => {
           </DropdownMenuItem>
           <DropdownMenuItem
             @click="toggleColorTheme('theme-yellow')"
-            class="bg-yellow-500 outline-none data-[highlighted]:!opacity-100 size-5 hover:ring-2 focus-visible:ring-2 ring-yellow-500/50 ring-offset-1 opacity-30"
+            class="bg-yellow-500 outline-none data-[highlighted]:!opacity-100 size-5 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
             :class="
               colorTheme === 'theme-yellow' ?
-                ' !ring-primary/80 !bg-yellow-790 ring-2 !ring-offset-1 !opacity-100'
+                ' !ring-primary/80 !bg-primary/10 ring-4 !ring-offset-0 !opacity-100'
               : ''
             "
           >
@@ -151,10 +151,10 @@ onMounted(() => {
           </DropdownMenuItem>
           <DropdownMenuItem
             @click="toggleColorTheme('theme-violet')"
-            class="outline-none data-[highlighted]:!opacity-100 size-5 bg-violet-500 hover:ring-2 focus-visible:ring-2 ring-violet-500/50 ring-offset-1 opacity-30"
+            class="outline-none data-[highlighted]:!opacity-100 size-5 bg-violet-500 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
             :class="
               colorTheme === 'theme-violet' ?
-                ' !ring-primary/80 !bg-primary/90 ring-2 !ring-offset-1 !opacity-100'
+                ' !ring-primary/80 !bg-primary/10 ring-4 !ring-offset-0 !opacity-100'
               : ''
             "
           >
@@ -162,10 +162,10 @@ onMounted(() => {
           </DropdownMenuItem>
           <DropdownMenuItem
             @click="toggleColorTheme('theme-foreground')"
-            class="outline-none data-[highlighted]:!opacity-100 size-5 bg-foreground/90 hover:ring-2 focus-visible:ring-2 ring-foreground/90 ring-offset-1 opacity-30"
+            class="!outline-none data-[highlighted]:!opacity-100 size-4 bg-foreground/90 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
             :class="
               colorTheme === 'theme-foreground' ?
-                ' !ring-primary/80 !bg-foreground/90 ring-2 !ring-offset-1 !opacity-100'
+                ' !ring-primary/80 !bg-foreground/10 ring-4 !ring-offset-0 !opacity-100'
               : ''
             "
           >

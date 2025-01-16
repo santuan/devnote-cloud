@@ -17,12 +17,28 @@ whenever(magicExpandDocument, (n) => {
   if (n) expandAllScreen()
 })
 
+// function expandAllScreen() {
+//   if (panelRef.value.isCollapsed) {
+//     panelRef.value.expand()
+//   } else {
+//     panelRef.value.collapse()
+//   }
+//   if (ExpandAll.value === true) {
+//     document.show_sidebar_documents = !document.show_sidebar_documents
+//   }
+// }
+
 function expandAllScreen() {
-  if (panelRef.value.isCollapsed) {
-    panelRef.value.expand()
+  // Set panel size to 50 instead of toggling collapse state
+  console.log(panelRef.value.getSize())
+  if (panelRef.value.getSize() <= 6) {
+    console.log("if")
+    panelRef.value.resize(20);
   } else {
-    panelRef.value.collapse()
+    console.log("else")
+    panelRef.value.resize(0);
   }
+   
   if (ExpandAll.value === true) {
     document.show_sidebar_documents = !document.show_sidebar_documents
   }
@@ -30,13 +46,13 @@ function expandAllScreen() {
 </script>
 
 <template>
-  <SplitterGroup direction="horizontal" auto-save-id="splitter" @layout="layout = $event">
+  <SplitterGroup direction="horizontal" auto-save-id="splitter" :keyboard-resize-by="2" @layout="layout = $event">
     <div :style="`flex: ${layout[1]} 1 0px; overflow: hidden;`" class="hidden lg:flex" />
     <SplitterPanel :min-size="80">
       <slot />
     </SplitterPanel>
     <SplitterResizeHandle
-      class="hidden print:!hidden !select-none lg:flex group justify-center items-center w-8 border-l-2 border-secondary/10 data-[state=hover]:border-primary/90 data-[state=drag]:border-primary/90 data-[state=hover]:delay-700 data-[state=hover]:border-l-4 duration-100 focus:ring-primary focus:ring-1 outline-none"
+      class="hidden  print:!hidden !select-none lg:flex group justify-center items-center w-10 border-l-2 border-secondary/10 data-[state=hover]:border-primary/90 data-[state=drag]:border-primary/90 data-[state=hover]:delay-700 data-[state=hover]:border-l-2 duration-100 focus:ring-primary focus:ring-1 outline-none "
     >
       <Tooltip
         :name="panelRef?.isCollapsed ? 'Collapse' : 'Expand'"
@@ -44,12 +60,12 @@ function expandAllScreen() {
         shortcut="ctrl shift alt ."
       >
         <button
-          class="z-20 flex items-center !select-none justify-center bg-background size-6"
+          class="z-20 flex items-center !cursor-auto !select-none justify-center bg-background size-8"
           @click="expandAllScreen"
           @keyup.enter="panelRef?.isCollapsed ? panelRef?.expand() : panelRef?.collapse()"
-          :class="panelRef?.isCollapsed ? 'rotate-180' : ''"
+          :class="layout[1] >= 5 ? '' : 'rotate-180'"
         >
-          <ArrowRightToLine class="delay-75 size-4 opacity-90" />
+          <ArrowRightToLine class="delay-75 size-4 opacity-90 !cursor-auto" />
           <span class="sr-only">{{ panelRef?.isCollapsed ? "Collapse" : "Expand" }}</span>
         </button>
       </Tooltip>

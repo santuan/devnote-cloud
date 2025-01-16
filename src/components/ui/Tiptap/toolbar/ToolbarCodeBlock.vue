@@ -21,7 +21,7 @@ const { t } = useI18n()
       class="interactive gap-1 !min-w-24 md:!min-w-20"
       :value="t('toolbar.codeBlock')"
     >
-      <p class="text-">Code</p>
+      <p class="text-xs">Code</p>
       <Code />
       <span class="sr-only">{{ t("toolbar.codeBlock") }}</span>
     </ToolbarButton>

@@ -79,11 +79,13 @@ const { t } = useI18n()
 
 <style scoped>
 .editor {
-  @apply relative mx-auto lg:w-full px-2 print:grid-rows-none;
+  @apply relative mx-auto lg:w-full pl-2 pr-0.5 print:grid-rows-none;
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr;
 }
+
+
 
 .editor-top {
   @apply bg-background z-50;

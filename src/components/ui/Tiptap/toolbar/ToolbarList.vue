@@ -21,18 +21,18 @@ const { t } = useI18n()
       class="interactive"
       :value="t('toolbar.bulletList')"
     >
-      <List class="!size-5"/>
+      <List class="!size-5" />
       <span class="sr-only">{{ t("toolbar.bulletList") }}</span>
     </ToolbarButton>
   </Tooltip>
-  <Tooltip :name="t('toolbar.orderedList')" shortcut="Ctrl Shift 7">
+  <Tooltip :name="t('toolbar.orderedList')" shortcut="Ctrl Shift 7" side="bottom">
     <ToolbarButton
       @click="editor.chain().focus().toggleOrderedList().run()"
       :class="{ 'is-active': editor.isActive('orderedList') }"
       class="interactive"
       :value="t('toolbar.orderedList')"
     >
-      <ListOrdered class="!size-5"/>
+      <ListOrdered class="!size-5" />
       <span class="sr-only">{{ t("toolbar.orderedList") }}</span>
     </ToolbarButton>
   </Tooltip>

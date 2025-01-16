@@ -38,5 +38,8 @@ export default defineConfig({
   // },
   build: {
     chunkSizeWarningLimit: 2000,
+    // rollupOptions: {
+    //   external: ['workbox-window']
+    // }
   },
 })

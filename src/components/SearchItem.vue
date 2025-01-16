@@ -53,7 +53,7 @@ function toggleCheck(item, isChecked) {
 </script>
 
 <template>
-  <div class="relative flex items-center justify-between w-full pr-3 min-h-8 gap-2 md:pr-2">
+  <div class="relative flex items-center justify-between w-full pr-3 pl-1 min-h-8 gap-2 md:pr-2">
     <button
       class="flex interactive hover:!text-primary px-0.5 h-6 w-full items-center outline-none justify-start text-sm text-left focus-within:ring-1 ring-primary"
       :class="

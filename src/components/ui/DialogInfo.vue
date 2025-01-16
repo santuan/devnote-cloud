@@ -42,13 +42,13 @@ const { t, locale } = useI18n()
     <DialogPortal>
       <DialogOverlay class="bg-background/95 fixed inset-0 z-[60]" />
       <DialogContent
-        class="font-mono fixed top-6 md:top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[750px] translate-x-[-50%] md:translate-y-[-50%] bg-background rounded p-4 focus:outline-none z-[100]"
+        class="font-mono fixed top-6 md:top-[50%] left-[50%] border border-secondary max-h-[85vh] w-[90vw] max-w-[750px] translate-x-[-50%] md:translate-y-[-50%] bg-background rounded p-4 focus:outline-none z-[100]"
       >
-        <DialogTitle class="text-foreground m-0 text-[17px] font-semibold">
+        <DialogTitle class="text-foreground m-0 text-sm pt-1 font-semibold">
           {{ t("sidebar.about") }}
         </DialogTitle>
         <ScrollAreaRoot
-          class="w-full border h-[78vh] mt-6 md:h-[70vh] border-secondary select-interactive"
+          class="w-full border h-[65vh] mt-6 md:h-[68vh] border-secondary select-interactive"
           style="--scrollbar-size: 10px"
         >
           <ScrollAreaViewport class="w-full h-full">
@@ -76,11 +76,8 @@ const { t, locale } = useI18n()
                   Puede exportar e importar la IndexedDB en formato JSON y asi mantener la base de
                   datos localmente.
                 </p>
-                <h3>Atajos de teclado</h3>
-                <ul>
-                  <li>
-                    <p><code>Ctrl Shift Alt S</code> Mostrar configuraciones.</p>
-                  </li>
+                <h3 class="text-sm">Atajos de teclado</h3>
+                <ul class="text-xs">
                   <li>
                     <p><code>Ctrl Alt N</code> Crear nuevo documento.</p>
                   </li>
@@ -91,17 +88,20 @@ const { t, locale } = useI18n()
                     <p><code>Ctrl Alt O</code> Barra de comandos para navegar documentos.</p>
                   </li>
                   <li>
-                    <p><code>Ctrl M</code> Colapsar el menu.</p>
+                    <p><code>Ctrl M</code> Colapsar el menú.</p>
+                  </li>
+                  <li>
+                    <p><code>Ctrl Shift Alt S</code> Mostrar configuraciones.</p>
                   </li>
                   <li>
                     <p>
-                      <code class="inline-flex gap-1">Ctrl <ArrowUp class="size-4" /></code>
+                      <code class="inline-flex gap-1">Ctrl Shift &uarr;</code>
                       Seleccionar documento anterior.
                     </p>
                   </li>
                   <li>
                     <p>
-                      <code class="inline-flex gap-1">Ctrl <ArrowDown class="size-4" /></code>
+                      <code class="inline-flex gap-1">Ctrl Shift &darr; </code>
                       Seleccionar documento siguiente.
                     </p>
                   </li>
@@ -147,11 +147,8 @@ const { t, locale } = useI18n()
                   You can export and import the IndexedDB in JSON format to keep the database
                   locally.
                 </p>
-                <h3>Keyboard Shortcuts</h3>
-                <ul>
-                  <li>
-                    <p><code>Ctrl Shift Alt S</code> Show settings.</p>
-                  </li>
+                <h3 class="text-sm">Keyboard Shortcuts</h3>
+                <ul class="text-xs">
                   <li>
                     <p><code>Ctrl Alt N</code> Create new document.</p>
                   </li>
@@ -165,14 +162,17 @@ const { t, locale } = useI18n()
                     <p><code>Ctrl M</code> Collapse the menu.</p>
                   </li>
                   <li>
+                    <p><code>Ctrl Shift Alt S</code> Show settings.</p>
+                  </li>
+                  <li>
                     <p>
-                      <code class="inline-flex gap-1">Ctrl <ArrowUp class="size-4" /></code> Select
-                      previous document.
+                      <code class="inline-flex gap-1">Ctrl Shift &uarr;</code> Select previous
+                      document.
                     </p>
                   </li>
                   <li>
                     <p>
-                      <code class="inline-flex gap-1">Ctrl <ArrowDown class="size-4" /></code>
+                      <code class="inline-flex gap-1">Ctrl Shift &darr;</code>
                       Select next document.
                     </p>
                   </li>

@@ -5,10 +5,10 @@
         <div ref="codeHeight" spellcheck="false">
           <pre><code class="text-xs leading-6 break-all"><node-view-content /></code></pre>
         </div>
-        <div
+        <!-- <div
           v-show="!showFullCode && height > 600"
           class="absolute bottom-0 left-0 right-0 z-10 h-16 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-[#1f2937] dark:to-[#060504]"
-        />
+        /> -->
       </ScrollAreaViewport>
       <ScrollAreaScrollbar
         class="flex select-none z-20 touch-none p-0.5 bg-secondary transition-colors duration-[160ms] ease-out hover:bg-background data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:h-2.5"

@@ -36,9 +36,8 @@ const { focus_documents } = storeToRefs(focus)
         />
       </h2>
       <div
-        v-if="!isMobile"
-        class="shrink-0 flex justify-end gap-0.5 opacity-60 text-xs text-foreground"
-        :class="allItemsTodo?.length <= 1 ? '!opacity-10' : ' '"
+        v-if="!isMobile && allItemsTodo?.length >= 2"
+        class="shrink-0 flex justify-end gap-1 opacity-60 text-xs text-foreground"
       >
         <kbd class="bg-background px-1">
           ctrl 

@@ -179,10 +179,10 @@ onBeforeUnmount(() => {
       style="--scrollbar-size: 10px"
     >
       <ScrollAreaViewport
-        class="w-full h-full border-secondary border outline-none group-focus-within:ring-primary/70 group-focus-within:ring-1 focus:ring-inset focus:!ring-primary focus:!ring-1 group-focus-within:ring-inset"
+        class="w-full h-full border-transparent border outline-none group-focus-within:!ring-primary group-focus-within:!ring-2 group-focus-within:!ring-inset focus:!ring-primary focus:!ring-1"
       >
         <EditorContextMenu>
-          <div class="max-w-full px-2 mx-auto prose dark:prose-invert" spellcheck="false">
+          <div class="max-w-full mx-auto prose dark:prose-invert" spellcheck="false">
             <slot />
             <editor-content :editor="editor" />
           </div>
@@ -203,6 +203,12 @@ onBeforeUnmount(() => {
 <style>
 .EditorTiptap {
   @apply grid w-full min-h-full;
+}
+
+.EditorTiptap .prose .tiptap {
+  p:first-of-type {
+    @apply mt-2;
+  }
 }
 
 [data-reka-scroll-area-viewport] {
@@ -281,11 +287,10 @@ onBeforeUnmount(() => {
       @apply !hidden;
     }
   }
-
 }
 
 .tiptap {
-  @apply p-1 md:p-4 md:pt-0 outline-none placeholder:text-primary min-h-[80dvh];
+  @apply px-2 md:p-4 md:pt-0 outline-none placeholder:text-primary min-h-[80dvh];
   /* @apply font-mono font-normal; */
   @apply font-serif;
 }

@@ -25,27 +25,26 @@ import ToolbarClear from "./toolbar/ToolbarClear.vue"
   <div class="py-1 z-10 relative bg-background print:hidden" v-if="editor">
     <div class="relative grid w-full max-w-full mx-auto control-group">
       <ToolbarRoot
-        class="flex gap-0.5 gap-y-1 justify-start select-none  button-group items-center md:w-auto"
+        class="flex gap-0.5 gap-y-1 justify-start select-none button-group items-center md:w-auto focus-within:!outline focus-within:!outline-1 focus-within:!outline-primary/60 focus-within:!outline-offset-[0.5px]"
       >
         <ToolbarUndo />
         <ToolbarRedo />
+        <ToolbarCodeBlock />
         <ToolbarHeadingSelector />
-        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-1" />
         <ToolbarCharacters />
         <ToolbarInlineCode />
         <ToolbarTextAlign />
-        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
-        <ToolbarCodeBlock />
-        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-1" />
         <ToolbarList />
         <ToolbarQuote />
         <ToolbarTextSeparator />
         <ToolbarTable />
-        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-1" />
         <ToolbarLinks />
-        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-1" />
         <ToolbarMedia />
-        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-0.5" />
+        <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-1" />
         <ToolbarClear />
       </ToolbarRoot>
     </div>
@@ -58,7 +57,7 @@ import ToolbarClear from "./toolbar/ToolbarClear.vue"
 }
 
 .button-group button {
-  @apply border border-secondary focus-within:border-primary outline-none h-[2.1rem] min-w-8 max-w-8 xl:max-w-full text-sm focus-visible:border-primary hover:!border-primary flex justify-center items-center;
+  @apply border border-secondary focus-within:border-primary outline-none h-[2.1rem] min-w-9 max-w-10 xl:max-w-full text-sm focus-visible:border-primary hover:!border-primary flex justify-center items-center;
   /* @apply @sm:bg-blue-600 @xs:bg-purple-600 @md:bg-yellow-600 @lg:bg-pink-600 @3xl:bg-gray-600 @xl:bg-red-600 @2xl:bg-green-600 @4xl:bg-red-600 @5xl:bg-emerald-600 */
   /* flex: 1; */
 }

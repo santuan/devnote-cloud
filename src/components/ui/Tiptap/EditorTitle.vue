@@ -47,12 +47,8 @@ const { t } = useI18n()
       >
         <span><Heading class="h-3" /></span>
         <CornerBottomRight
-          class="right-1 bottom-1"
-          :class="[
-            show_editor_toolbar ?
-              ' !fill-background  '
-            : '!fill-primary ',
-          ]"
+          class="right-1 bottom-1 group-hover:right-1.5 group-hover:bottom-1.5"
+          :class="[show_editor_toolbar ? ' !fill-background  ' : '!fill-primary ']"
         />
       </button>
     </Tooltip>

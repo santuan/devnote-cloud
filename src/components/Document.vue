@@ -7,7 +7,7 @@ import SplitterGroup from "@/components/ui/SplitterGroup.vue"
 </script>
 
 <template>
-  <div class="Document w-full min-h-screen pl-12 md:pl-10 lg:pl-0 bg-background print:pl-0">
+  <div class="Document w-full min-h-screen pl-10 lg:pl-0 bg-background print:pl-0">
     <SplitterGroup>
       <DocumentEditor />
     </SplitterGroup>

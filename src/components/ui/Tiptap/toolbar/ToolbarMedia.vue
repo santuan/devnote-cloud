@@ -35,9 +35,7 @@ const { setVideo } = useSetVideo(editor)
 <template>
   <DropdownMenuRoot>
     <ToolbarButton as-child>
-      <DropdownMenuTrigger
-        class=" group interactive data-[state=open]:text-primary relative"
-      >
+      <DropdownMenuTrigger class="group interactive data-[state=open]:text-primary relative">
         <Tooltip :name="`${t('verb.add')} ${t('toolbar.image')}`" side="bottom">
           <span
             class="flex items-center interactive justify-center outline-none size-8 focus-visible:border-primary border-secondary"
@@ -45,11 +43,15 @@ const { setVideo } = useSetVideo(editor)
             <ImagePlus class="size-4" />
           </span>
           <span class="sr-only">{{ t("verb.add") }} {{ t("toolbar.image") }}</span>
-          <CornerBottomRight/>
+          <CornerBottomRight />
         </Tooltip>
       </DropdownMenuTrigger>
     </ToolbarButton>
-    <DropdownMenuContent class="z-50 grid w-40 text-xs gap-1 bg-background border border-primary">
+    <DropdownMenuContent
+      side="bottom"
+      :side-offset="7"
+      class="z-50 grid w-40 text-xs gap-1 bg-background border border-primary"
+    >
       <DropdownMenuItem
         as-child
         v-show="!settings.media_base64"
@@ -91,7 +93,7 @@ const { setVideo } = useSetVideo(editor)
     </DropdownMenuContent>
   </DropdownMenuRoot>
 
-  <Tooltip :name="`${t('verb.add')} Youtube video`">
+  <Tooltip :name="`${t('verb.add')} Youtube video`" side="bottom">
     <ToolbarButton
       @click="addVideo"
       class="flex items-center justify-center outline-none interactive size-8 focus-visible:border-primary border-secondary"
@@ -101,7 +103,7 @@ const { setVideo } = useSetVideo(editor)
       <span class="sr-only">{{ t("verb.add") }} Youtube video</span>
     </ToolbarButton>
   </Tooltip>
-  <Tooltip name="Video URL">
+  <Tooltip name="Video URL" side="bottom">
     <ToolbarButton
       class="flex items-center interactive justify-center border outline-none size-8 focus-visible:border-primary border-secondary"
       @click="setVideo()"

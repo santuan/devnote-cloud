@@ -62,7 +62,7 @@ const { t } = useI18n()
           <span>{{ t("toolbar.alignLeft") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium text-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[12px] font-medium text-foreground opacity-100"
         >
           Ctrl Shift L
         </kbd>
@@ -77,7 +77,7 @@ const { t } = useI18n()
           <span>{{ t("toolbar.alignCenter") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium text-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[12px] font-medium text-foreground opacity-100"
         >
           Ctrl Shift E
         </kbd>
@@ -92,7 +92,7 @@ const { t } = useI18n()
           <span>{{ t("toolbar.alignRight") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium text-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[12px] font-medium text-foreground opacity-100"
         >
           Ctrl Shift R
         </kbd>
@@ -107,12 +107,12 @@ const { t } = useI18n()
           <span>{{ t("toolbar.alignJustify") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium text-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[12px] font-medium text-foreground opacity-100"
         >
           Ctrl Shift J
         </kbd>
       </DropdownMenuItem>
-      <DropdownMenuItem
+      <!-- <DropdownMenuItem
         @click="editor.chain().focus().unsetTextAlign().run()"
         class="flex items-center justify-between p-2 pr-3 bg-background outline-none focus-visible:bg-primary/30 hover:bg-primary/20"
       >
@@ -121,11 +121,11 @@ const { t } = useI18n()
           <span>{{ t("toolbar.noAlignment") }}</span>
         </div>
         <kbd
-          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[8px] font-medium ml-auto text-foreground opacity-100"
+          class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded bg-secondary px-1.5 font-mono text-[12px] font-medium ml-auto text-foreground opacity-100"
         >
           Ctrl Shift L
         </kbd>
-      </DropdownMenuItem>
+      </DropdownMenuItem> -->
     </DropdownMenuContent>
   </DropdownMenuRoot>
 </template>

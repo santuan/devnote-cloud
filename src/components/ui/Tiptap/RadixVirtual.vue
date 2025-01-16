@@ -166,13 +166,13 @@ const filteredOptions = computed(() =>
               aria-label="Reset search"
               @click="searchTerm = ''"
               v-if="searchTerm.length !== 0"
-              class="absolute focus:bg-primary hover:text-primary-foreground focus:text-primary-foreground inline-flex items-center cursor-pointer justify-center text-foreground outline-none size-7 top-[2px] right-8 hover:bg-background bg-background"
+              class="absolute focus:bg-primary hover:text-foreground focus:text-primary-foreground inline-flex items-center cursor-pointer justify-center text-foreground outline-none size-7 top-[2px] right-8 hover:bg-background bg-background"
             >
               <RotateCcw class="size-4" />
             </button>
           </Transition>
           <PopoverClose
-            class="absolute focus:bg-primary hover:text-primary-foreground focus:text-primary-foreground inline-flex items-center justify-center cursor-pointer text-foreground outline-none size-7 top-[2px] right-0 hover:bg-background bg-background"
+            class="absolute focus:bg-primary hover:!text-white focus:text-primary-foreground inline-flex items-center justify-center cursor-auto text-foreground outline-none size-7 top-[2px] right-0 hover:bg-background bg-background"
             aria-label="Close"
           >
             <X class="size-4" />
