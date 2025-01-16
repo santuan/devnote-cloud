@@ -23,10 +23,11 @@ db.version(2).stores({
 
 // Connect your dexie-cloud database:
 db.cloud.configure({
-  databaseUrl: "https://[[your_database_url]].dexie.cloud",
+  databaseUrl: import.meta.env.VITE_DBURL,
   requireAuth: true, // optional
   // customLoginGui: true
 })
+
 
 export type { Documents, DocumentData }
 export { db }
