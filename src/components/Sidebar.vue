@@ -16,7 +16,7 @@ function toggleMenu() {
 </script>
 
 <template>
-  <div class="fixed bottom-0 md:bottom-auto md:top-0 left-0 m-1 z-50">
+  <div class="fixed bottom-0 md:bottom-auto md:top-0 left-0 bg-background m-2 md:m-1 z-50">
     <button
       @click="toggleMenu()"
       class="flex items-center justify-start gap-2 p-1 w-8 h-8 focus-visible:ring-1 focus-within:ring-1 focus-within:ring-primary focus-visible:ring-primary"
