@@ -29,16 +29,15 @@ whenever(magicExpandDocument, (n) => {
 // }
 
 function expandAllScreen() {
-  // Set panel size to 50 instead of toggling collapse state
-  console.log(panelRef.value.getSize())
-  if (panelRef.value.getSize() <= 6) {
-    console.log("if")
-    panelRef.value.resize(20);
+  if (panelRef.value.getSize() <= 3) {
+    if (document.show_sidebar_documents) {
+      panelRef.value.resize(5);
+    } else {
+      panelRef.value.resize(16);
+    }
   } else {
-    console.log("else")
     panelRef.value.resize(0);
   }
-   
   if (ExpandAll.value === true) {
     document.show_sidebar_documents = !document.show_sidebar_documents
   }
@@ -63,7 +62,7 @@ function expandAllScreen() {
           class="z-20 flex items-center !cursor-auto !select-none justify-center bg-background size-8"
           @click="expandAllScreen"
           @keyup.enter="panelRef?.isCollapsed ? panelRef?.expand() : panelRef?.collapse()"
-          :class="layout[1] >= 5 ? '' : 'rotate-180'"
+          :class="layout[1] >= 3 ? '' : 'rotate-180'"
         >
           <ArrowRightToLine class="delay-75 size-4 opacity-90 !cursor-auto" />
           <span class="sr-only">{{ panelRef?.isCollapsed ? "Collapse" : "Expand" }}</span>
