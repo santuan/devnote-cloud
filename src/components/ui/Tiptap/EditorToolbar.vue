@@ -19,6 +19,7 @@ import ToolbarInlineCode from "./toolbar/ToolbarInlineCode.vue"
 import ToolbarCodeBlock from "./toolbar/ToolbarCodeBlock.vue"
 import ToolbarLinks from "./toolbar/ToolbarLinks.vue"
 import ToolbarClear from "./toolbar/ToolbarClear.vue"
+import ToolbarPreview from "./toolbar/ToolbarPreview.vue"
 </script>
 
 <template>
@@ -46,6 +47,7 @@ import ToolbarClear from "./toolbar/ToolbarClear.vue"
         <ToolbarMedia />
         <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-1" />
         <ToolbarClear />
+        <ToolbarPreview />
       </ToolbarRoot>
     </div>
   </div>

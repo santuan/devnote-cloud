@@ -30,13 +30,9 @@ whenever(magicExpandDocument, (n) => {
 
 function expandAllScreen() {
   if (panelRef.value.getSize() <= 3) {
-    if (document.show_sidebar_documents) {
-      panelRef.value.resize(5);
-    } else {
-      panelRef.value.resize(16);
-    }
+    panelRef.value.resize(25)
   } else {
-    panelRef.value.resize(0);
+    panelRef.value.resize(0)
   }
   if (ExpandAll.value === true) {
     document.show_sidebar_documents = !document.show_sidebar_documents
@@ -45,13 +41,18 @@ function expandAllScreen() {
 </script>
 
 <template>
-  <SplitterGroup direction="horizontal" auto-save-id="splitter" :keyboard-resize-by="2" @layout="layout = $event">
+  <SplitterGroup
+    direction="horizontal"
+    auto-save-id="splitter"
+    :keyboard-resize-by="2"
+    @layout="layout = $event"
+  >
     <div :style="`flex: ${layout[1]} 1 0px; overflow: hidden;`" class="hidden lg:flex" />
-    <SplitterPanel :min-size="80">
+    <SplitterPanel :min-size="75">
       <slot />
     </SplitterPanel>
     <SplitterResizeHandle
-      class="hidden  print:!hidden !select-none lg:flex group justify-center items-center w-10 border-l-2 border-secondary/10 data-[state=hover]:border-primary/90 data-[state=drag]:border-primary/90 data-[state=hover]:delay-700 data-[state=hover]:border-l-2 duration-100 focus:ring-primary focus:ring-1 outline-none "
+      class="hidden print:!hidden !select-none lg:flex group justify-center items-center w-10 border-l-2 border-secondary/10 data-[state=hover]:border-primary/90 data-[state=drag]:border-primary/90 data-[state=hover]:delay-700 data-[state=hover]:border-l-2 duration-100 focus:ring-primary focus:ring-1 outline-none"
     >
       <Tooltip
         :name="panelRef?.isCollapsed ? 'Collapse' : 'Expand'"
@@ -70,7 +71,7 @@ function expandAllScreen() {
       </Tooltip>
     </SplitterResizeHandle>
     <SplitterPanel
-      :max-size="20"
+      :max-size="25"
       :collapsed-size="0"
       ref="panelRef"
       collapsible
