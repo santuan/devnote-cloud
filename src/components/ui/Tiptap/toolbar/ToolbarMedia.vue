@@ -49,7 +49,7 @@ const { setVideo } = useSetVideo(editor)
     </ToolbarButton>
     <DropdownMenuContent
       side="bottom"
-      :side-offset="7"
+      :side-offset="6"
       class="z-50 grid w-40 text-xs gap-1 bg-background border border-primary"
     >
       <DropdownMenuItem

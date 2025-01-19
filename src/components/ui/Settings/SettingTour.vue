@@ -25,8 +25,8 @@ const toggleTour = () => {
 </script>
 
 <template>
-  <div class="flex-row items-start justify-between flex gap-3 pt-2 py-3 pr-3">
-    <div class="space-y-0.5" v-auto-animate>
+  <div class="flex-row items-start justify-between flex gap-3 pt-2 py-3 pr-3 border-t border-secondary">
+    <div class="space-y-0.5">
       <h3 class="text-sm font-medium text-pretty mt-0">Tour</h3>
       <p class="text-xs text-muted-foreground text-balance">
         {{ t("settings.tourDescription") }}

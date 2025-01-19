@@ -26,7 +26,7 @@ import ToolbarPreview from "./toolbar/ToolbarPreview.vue"
   <div class="py-1 z-10 relative bg-background print:hidden" v-if="editor">
     <div class="relative grid w-full max-w-full mx-auto control-group">
       <ToolbarRoot
-        class="flex gap-0.5 gap-y-1 justify-start select-none button-group items-center md:w-auto focus-within:!outline focus-within:!outline-1 focus-within:!outline-primary/60 focus-within:!outline-offset-[0.5px]"
+        class="flex gap-0.5 gap-y-1 justify-start select-none button-group items-center md:w-auto focus-within:!outline focus-within:!outline-1 focus-within:!outline-primary/10 focus-within:!outline-offset-[1.5px]"
       >
         <ToolbarUndo />
         <ToolbarRedo />

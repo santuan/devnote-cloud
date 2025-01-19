@@ -28,7 +28,7 @@ const { t } = useI18n()
   <AlertDialogRoot v-model:open="show_delete_document_modal">
     <Tooltip :name="t('editor.delete')" shortcut="shift + delete">
       <AlertDialogTrigger
-        class="fixed bottom-1 print:hidden md:bottom-0 right-1 md:right-3 lg:right-0 flex items-center justify-center ml-auto text-xs ButtonDeleteDocument h-10 w-10 z-50 text-primary hover:bg-primary/20"
+        class="fixed bottom-1 print:hidden md:bottom-0 right-1 md:right-1 lg:right-0 flex items-center justify-center ml-auto text-xs ButtonDeleteDocument h-10 w-10 z-50 text-primary hover:bg-primary/20"
         :class="db_store.loaded_id ? '' : 'hidden'"
       >
         <Trash2 class="size-4" />
@@ -38,12 +38,12 @@ const { t } = useI18n()
     <AlertDialogPortal>
       <AlertDialogOverlay class="fixed inset-0 z-[80] bg-black/50" />
       <AlertDialogContent
-        class="fixed z-[80] w-[95vw] max-w-xs rounded-lg p-4 md:w-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-background text-foreground border border-secondary font-mono"
+        class="fixed z-[80] w-[95vw] max-w-sm rounded-lg p-4 md:w-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-background text-foreground border border-secondary font-mono"
       >
-        <AlertDialogTitle class="text-sm font-medium">
-          {{ t("editor.delete") }}
+        <AlertDialogTitle class="text-sm font-light">
+          {{ t("editor.delete") }} <strong class="font-bold">{{ db_store.document_name }}</strong>
         </AlertDialogTitle>
-        <AlertDialogDescription class="mt-2 mb-5 text-xs">
+        <AlertDialogDescription class="mt-3 mb-5 text-xs">
           {{ t("editor.deleteConfirm") }}
         </AlertDialogDescription>
         <div class="flex justify-between gap-x-2">
