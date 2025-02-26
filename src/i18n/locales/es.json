@@ -136,6 +136,8 @@
     "newVersionAvailable": "Nueva versión disponible",
     "updateButton": "Actualizar",
     "clickToUpdate": "Click para actualizar",
+    "clickToEdit": "Click para editar",
+    "documentNotSaved": "Documento sin guardar.",
     "unsavedChanges": "Cambios sin guardar",
     "unsavedChangesDescription": " El documento actual tiene cambios sin guardar.",
     "discardChanges": " Descartar cambios",

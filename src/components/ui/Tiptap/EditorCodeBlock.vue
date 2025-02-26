@@ -11,7 +11,7 @@
         /> -->
       </ScrollAreaViewport>
       <ScrollAreaScrollbar
-        class="flex select-none z-20 touch-none p-0.5 bg-secondary transition-colors duration-[160ms] ease-out hover:bg-background data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:h-2.5"
+        class="flex select-none z-20 touch-none p-0.5 bg-secondary transition-colors ease-out hover:bg-background data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:h-2.5"
         orientation="vertical"
       >
         <ScrollAreaThumb

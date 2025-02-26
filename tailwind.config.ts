@@ -1,3 +1,6 @@
+import animate from "tailwindcss-animate"
+import { setupInspiraUI } from "@inspira-ui/plugins"
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "selector",
@@ -130,6 +133,8 @@ export default {
   },
   plugins: [
     require("@tailwindcss/typography"),
+    animate,
+    setupInspiraUI,
     require("@tailwindcss/container-queries"),
     require("tailwind-scrollbar")({ nocompatible: true }),
   ],

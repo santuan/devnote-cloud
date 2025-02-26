@@ -136,6 +136,8 @@
     "newVersionAvailable": "New version available",
     "updateButton": "Update",
     "clickToUpdate": "Click to update",
+    "clickToEdit": "Click to editar",
+    "documentNotSaved": "Document not saved.",
     "unsavedChanges": "Has unsaved changes",
     "unsavedChangesDescription": "Curent document has changes that are not saved in indexededDb",
     "discardChanges": "Discard changes",
