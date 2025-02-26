@@ -59,7 +59,7 @@ const { t, locale } = useI18n()
                 <DialogDescription
                   class="inline-block p-3 mt-3 mb-3 text-sm leading-normal rounded text-foreground bg-primary/20"
                 >
-                  Esto es una alpha, no utilizar más que para realizar pruebas.
+                  Esto es una beta, no utilizar más que para realizar pruebas.
                 </DialogDescription>
                 <p class="mt-3 mb-5 text-sm leading-normal text-foreground !select-text">
                   Esta aplicación usa la tecnologia
@@ -79,19 +79,19 @@ const { t, locale } = useI18n()
                 <h3 class="text-sm">Atajos de teclado</h3>
                 <ul class="text-xs">
                   <li>
-                    <p><code>Ctrl Alt N</code> Crear nuevo documento.</p>
+                    <p><code>Ctrl Alt N</code> Crear nuevo documento</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Alt P</code> Alternar entre modo editar o previsualizar.</p>
+                    <p><code>Ctrl Alt P</code> Alternar entre modo editar o previsualizar</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Alt O</code> Barra de comandos para navegar documentos.</p>
+                    <p><code>Ctrl Alt O</code> Barra de comandos para navegar documentos</p>
                   </li>
                   <li>
-                    <p><code>Ctrl M</code> Colapsar el menú.</p>
+                    <p><code>Ctrl M</code> Colapsar el menú</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt S</code> Mostrar configuraciones.</p>
+                    <p><code>Ctrl Shift Alt S</code> Mostrar configuraciones</p>
                   </li>
                   <li>
                     <p>
@@ -106,19 +106,25 @@ const { t, locale } = useI18n()
                     </p>
                   </li>
                   <li>
-                    <p><code>Ctrl Alt .</code> Expande el editor de texto a todo el ancho.</p>
+                    <p><code>Ctrl Alt .</code> Expande el editor de texto a todo el ancho</p>
                   </li>
                   <li>
-                    <p><code>Shift Delete</code> Eliminar documento en curso.</p>
+                    <p><code>Shift Delete</code> Eliminar documento en curso</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt &larr;</code> Saltar al menú.</p>
+                    <p><code>Ctrl Shift Alt &larr;</code> Saltar al menú</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt &rarr;</code> Saltar al titulo actual.</p>
+                    <p><code>Ctrl Shift Alt &rarr;</code> Saltar al titulo actual</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt E</code> Saltar al editor de texto.</p>
+                    <p><code>Ctrl Shift Alt E</code> Saltar al editor de texto</p>
+                  </li>
+                  <li>
+                    <p><code>Ctrl Shift +</code> Incrementar tamaño app</p>
+                  </li>
+                  <li>
+                    <p><code>Ctrl Shift -</code> Disminuir tamaño app</p>
                   </li>
                 </ul>
               </article>
@@ -130,7 +136,7 @@ const { t, locale } = useI18n()
                 <DialogDescription
                   class="inline-block p-3 mt-3 mb-3 text-sm leading-normal rounded text-foreground bg-primary/20"
                 >
-                  This is an alpha version; use it only for testing purposes. Currently adapting to
+                  This is an beta version; use it only for testing purposes. Currently adapting to
                   work well with <a href="https://nvda.es/">NVDA</a>.
                 </DialogDescription>
                 <p class="mt-3 mb-5 text-sm leading-normal text-foreground !select-text">
@@ -150,19 +156,19 @@ const { t, locale } = useI18n()
                 <h3 class="text-sm">Keyboard Shortcuts</h3>
                 <ul class="text-xs">
                   <li>
-                    <p><code>Ctrl Alt N</code> Create new document.</p>
+                    <p><code>Ctrl Alt N</code> Create new document</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Alt P</code> Toggle between edit or preview mode.</p>
+                    <p><code>Ctrl Alt P</code> Toggle between edit or preview mode</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Alt O</code> Command bar to navigate documents.</p>
+                    <p><code>Ctrl Alt O</code> Command bar to navigate documents</p>
                   </li>
                   <li>
-                    <p><code>Ctrl M</code> Collapse the menu.</p>
+                    <p><code>Ctrl M</code> Collapse the menu</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift Alt S</code> Show settings.</p>
+                    <p><code>Ctrl Shift Alt S</code> Show settings</p>
                   </li>
                   <li>
                     <p>
@@ -177,22 +183,28 @@ const { t, locale } = useI18n()
                     </p>
                   </li>
                   <li>
-                    <p><code>Ctrl Alt .</code> Expand/Collapse the editing area.</p>
+                    <p><code>Ctrl Alt .</code> Expand/Collapse the editing area</p>
                   </li>
                   <li>
-                    <p><code>Shift Delete</code> Delete current document.</p>
+                    <p><code>Shift Delete</code> Delete current document</p>
                   </li>
                   <li>
-                    <p><code>ctrl shift alt &uarr;</code> Toogle editor typography options.</p>
+                    <p><code>ctrl shift alt &uarr;</code> Toogle editor typography options</p>
                   </li>
                   <li>
-                    <p><code>ctrl shift alt &larr;</code> Focus on sidebar.</p>
+                    <p><code>ctrl shift alt &larr;</code> Focus on sidebar</p>
                   </li>
                   <li>
-                    <p><code>ctrl shift alt &rarr;</code> Focus on title.</p>
+                    <p><code>ctrl shift alt &rarr;</code> Focus on title</p>
                   </li>
                   <li>
-                    <p><code>ctrl shift alt &darr;</code> Focus on editor.</p>
+                    <p><code>ctrl shift alt &darr;</code> Focus on editor</p>
+                  </li>
+                  <li>
+                    <p><code>ctrl shift +</code> Increase App size</p>
+                  </li>
+                  <li>
+                    <p><code>ctrl shift -</code> Decrease App size</p>
                   </li>
                 </ul>
               </article>

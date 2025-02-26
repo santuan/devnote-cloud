@@ -2,7 +2,7 @@
   <div class="absolute flex justify-center items-center inset-0">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="relative opacity-[0.05] w-44 h-44"
+      class="relative opacity-[0.1] w-44 h-44"
       id="a"
       viewBox="0 0 384 311.02"
     >

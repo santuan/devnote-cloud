@@ -35,17 +35,13 @@ function focusOnTitle() {
         @click="focusOnTitle()"
         class="p-2 h-8 relative z-10 text-xs text-primary-foreground bg-primary"
       >
-        <TextGenerateEffect :words="t('message.documentNotSaved')" :delay="50" />
+        <TextGenerateEffect
+          class="translate-x-1"
+          :words="t('message.documentNotSaved')"
+          :delay="50"
+        />
       </button>
     </Tooltip>
-    <Ripple class="opacity-50" />
-
-    <svg
-      class="blur-3xl opacity-30 md:translate-x-0 -translate-x-24 fixed top-0 left-0 h-screen w-auto md:h-auto md:w-full"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 332 332"
-    >
-      <circle class="fill-primary/30" cx="166" cy="166" r="166" />
-    </svg>
+    <Ripple class="opacity-80" />
   </div>
 </template>

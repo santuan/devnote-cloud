@@ -6,6 +6,7 @@ import { storeToRefs } from "pinia"
 import { useFocusStore } from "@/stores/focus"
 import { useEditorStore } from "@/stores/editor"
 import { useDatabaseStore } from "@/stores/database"
+import { useFontSize } from "@/composables/useFontSize"
 
 export const useMagicKeysStore = defineStore("magic-keys", () => {
   const keys = useMagicKeys()
@@ -14,6 +15,7 @@ export const useMagicKeysStore = defineStore("magic-keys", () => {
   const focus = useFocusStore()
   const db_store = useDatabaseStore()
   const editor_store = useEditorStore()
+  const { toggleFontSize } = useFontSize()
 
   const { editor } = storeToRefs(editor_store)
 
@@ -28,6 +30,16 @@ export const useMagicKeysStore = defineStore("magic-keys", () => {
   const magic_previous_document = keys["ctrl+shift+ArrowUp"]
   const magic_show_settings = keys["ctrl+shift+alt+s"]
   const magic_toggle_preview = keys["ctrl+alt+p"]
+  const magic_increase_font = keys["ctrl+shift+NumpadAdd"]
+  const magic_decrease_font = keys["ctrl+shift+NumpadSubtract"]
+
+  whenever(magic_increase_font, () => {
+    toggleFontSize("increase")
+  })
+
+  whenever(magic_decrease_font, () => {
+    toggleFontSize("decrease")
+  })
 
   whenever(magic_focus_sidebar, (n) => {
     if (n) focus.setFocusSidebar()
