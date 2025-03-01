@@ -517,10 +517,10 @@ html.dark .shiki span {
 .tiptap ul[data-type="taskList"] > div {
   flex: 1 1 auto;
 }
-
+/* 
 .tiptap ul[data-type="taskList"] input[type="checkbox"] {
   cursor: pointer;
-}
+} */
 
 .tiptap ul[data-type="taskList"] {
   margin: 0;
@@ -530,7 +530,7 @@ html.dark .shiki span {
 .tiptap ul[data-type="taskList"] li[data-checked] input[type="checkbox"] {
   position: absolute;
   opacity: 0;
-  cursor: pointer;
+  /* cursor: pointer; */
   height: 0;
   width: 0;
 }
@@ -545,7 +545,7 @@ html.dark .shiki span {
   @apply bg-primary/10 border-primary/50 border-2;
   /* border: 2px solid #ccc; */
   border-radius: 4px;
-  cursor: pointer;
+  /* cursor: pointer; */
   vertical-align: middle;
   transition: all 0.2s ease;
 }
