@@ -51,7 +51,8 @@
     "deleteRow": "Eliminar fila",
     "deleteTable": "Eliminar tabla",
     "mergeCells": "Combinar celdas",
-    "splitCell": "Dividir celda"
+    "splitCell": "Dividir celda",
+    "addTask": "Agregar tarea"
   },
   "sidebar": {
     "newDocument": "Crear nuevo documento",

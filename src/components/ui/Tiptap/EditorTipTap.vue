@@ -22,6 +22,8 @@ import Placeholder from "@tiptap/extension-placeholder"
 import TextAlign from "@tiptap/extension-text-align"
 import Link from "@tiptap/extension-link"
 import Table from "@tiptap/extension-table"
+import TaskItem from "@tiptap/extension-task-item"
+import TaskList from "@tiptap/extension-task-list"
 import TableCell from "@tiptap/extension-table-cell"
 import TableHeader from "@tiptap/extension-table-header"
 import TableRow from "@tiptap/extension-table-row"
@@ -90,6 +92,10 @@ onMounted(() => {
       History,
       Color.configure({ types: [TextStyle.name, ListItem.name] }),
       TextStyle.configure({ types: [ListItem.name] }),
+      TaskList,
+      TaskItem.configure({
+        nested: true,
+      }),
       ResizableMedia,
       // Image.configure({
       //   allowBase64: true,
@@ -205,11 +211,11 @@ onBeforeUnmount(() => {
   @apply grid w-full min-h-full;
 }
 
-.EditorTiptap .prose .tiptap {
+/* .EditorTiptap .prose .tiptap {
   p:first-of-type {
-    @apply mt-2;
+    @apply mt-0;
   }
-}
+} */
 
 [data-reka-scroll-area-viewport] {
   @apply print:!overflow-y-visible print:!border-0;
@@ -489,5 +495,98 @@ html.dark .shiki span {
 
 .tiptap li p {
   @apply m-0;
+}
+
+.tiptap ul[data-type="taskList"] {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+.tiptap ul[data-type="taskList"] li {
+  align-items: flex-start;
+  display: flex;
+
+}
+.tiptap ul[data-type="taskList"]  label {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+  user-select: none;
+}
+
+.tiptap ul[data-type="taskList"] > div {
+  flex: 1 1 auto;
+}
+
+.tiptap ul[data-type="taskList"] input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.tiptap ul[data-type="taskList"] {
+  margin: 0;
+}
+
+/* Hide the default checkbox */
+.tiptap ul[data-type="taskList"] li[data-checked] input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Style the custom checkbox container */
+.tiptap ul[data-type="taskList"] li[data-checked] label span {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  @apply bg-primary/10 border-primary/50 border-2;
+  /* border: 2px solid #ccc; */
+  border-radius: 4px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+/* Style for checked state using the data-checked attribute */
+.tiptap ul[data-type="taskList"] li[data-checked="true"] label span {
+  @apply bg-primary/10 border-primary/50
+  
+}
+
+/* Create the checkmark SVG for checked state */
+.tiptap ul[data-type="taskList"] li[data-checked="true"] label span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Style for the list item */
+.tiptap ul[data-type="taskList"] li[data-checked] {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+/* Style for the content div */
+.tiptap ul[data-type="taskList"] li[data-checked] div {
+  flex: 1;
+}
+
+/* Optional: Add a line-through style for checked items */
+.tiptap ul[data-type="taskList"] li[data-checked="true"] div p {
+  text-decoration: line-through;
+  color: #888;
 }
 </style>

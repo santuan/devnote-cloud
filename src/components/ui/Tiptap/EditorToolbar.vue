@@ -20,6 +20,7 @@ import ToolbarCodeBlock from "./toolbar/ToolbarCodeBlock.vue"
 import ToolbarLinks from "./toolbar/ToolbarLinks.vue"
 import ToolbarClear from "./toolbar/ToolbarClear.vue"
 import ToolbarPreview from "./toolbar/ToolbarPreview.vue"
+import ToolbarTaskList from "./toolbar/ToolbarTaskList.vue"
 </script>
 
 <template>
@@ -37,6 +38,7 @@ import ToolbarPreview from "./toolbar/ToolbarPreview.vue"
         <ToolbarInlineCode />
         <ToolbarTextAlign />
         <ToolbarSeparator class="border-x border-foreground/10 h-8 mx-1 w-1" />
+        <ToolbarTaskList/>
         <ToolbarList />
         <ToolbarQuote />
         <ToolbarTextSeparator />
