@@ -542,9 +542,8 @@ html.dark .shiki span {
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  @apply bg-primary/10 border-primary/50 border-2;
+  @apply bg-primary/10 border-primary/50 border-2 -translate-y-[1px];
   /* border: 2px solid #ccc; */
-  border-radius: 4px;
   /* cursor: pointer; */
   vertical-align: middle;
   transition: all 0.2s ease;
@@ -553,7 +552,10 @@ html.dark .shiki span {
 /* Style for checked state using the data-checked attribute */
 .tiptap ul[data-type="taskList"] li[data-checked="true"] label span {
   @apply bg-primary/10 border-primary/50
-  
+}
+
+.tiptap ul[data-type="taskList"] li[data-checked]:hover label span {
+  @apply bg-primary/20 border-primary/90
 }
 
 /* Create the checkmark SVG for checked state */
