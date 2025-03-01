@@ -121,10 +121,10 @@ const { t, locale } = useI18n()
                     <p><code>Ctrl Shift Alt E</code> Saltar al editor de texto</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift +</code> Incrementar tamaño app</p>
+                    <p><code>Ctrl Shift +</code> Incrementar tamaño app. Solo teclado númerico</p>
                   </li>
                   <li>
-                    <p><code>Ctrl Shift -</code> Disminuir tamaño app</p>
+                    <p><code>Ctrl Shift -</code> Disminuir tamaño app. Solo teclado númerico</p>
                   </li>
                 </ul>
               </article>
@@ -201,10 +201,10 @@ const { t, locale } = useI18n()
                     <p><code>ctrl shift alt &darr;</code> Focus on editor</p>
                   </li>
                   <li>
-                    <p><code>ctrl shift +</code> Increase App size</p>
+                    <p><code>ctrl shift +</code> Increase App size. Numbpad only</p>
                   </li>
                   <li>
-                    <p><code>ctrl shift -</code> Decrease App size</p>
+                    <p><code>ctrl shift -</code> Decrease App size. Numbpad only</p>
                   </li>
                 </ul>
               </article>
