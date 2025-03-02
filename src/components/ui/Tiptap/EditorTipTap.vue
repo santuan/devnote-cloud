@@ -506,9 +506,8 @@ html.dark .shiki span {
 .tiptap ul[data-type="taskList"] li {
   align-items: flex-start;
   display: flex;
-
 }
-.tiptap ul[data-type="taskList"]  label {
+.tiptap ul[data-type="taskList"] label {
   flex: 0 0 auto;
   margin-right: 0.5rem;
   user-select: none;
@@ -517,7 +516,7 @@ html.dark .shiki span {
 .tiptap ul[data-type="taskList"] > div {
   flex: 1 1 auto;
 }
-/* 
+/*
 .tiptap ul[data-type="taskList"] input[type="checkbox"] {
   cursor: pointer;
 } */
@@ -546,16 +545,16 @@ html.dark .shiki span {
   /* border: 2px solid #ccc; */
   /* cursor: pointer; */
   vertical-align: middle;
-  transition: all 0.2s ease;
+  /* transition: all 0.2s ease; */
 }
 
 /* Style for checked state using the data-checked attribute */
 .tiptap ul[data-type="taskList"] li[data-checked="true"] label span {
-  @apply bg-primary/10 border-primary/50
+  @apply bg-primary/10 border-primary/50;
 }
 
 .tiptap ul[data-type="taskList"] li[data-checked]:hover label span {
-  @apply bg-primary/20 border-primary/90
+  @apply bg-primary/20 border-primary/90;
 }
 
 /* Create the checkmark SVG for checked state */
