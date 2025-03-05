@@ -14,7 +14,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Tooltip :name="t('toolbar.addTask')" side="bottom">
+  <Tooltip :name="t('toolbar.addTask')" shortcut="Ctrl Shift Alt L" side="bottom">
     <ToolbarButton
       class="flex interactive items-center justify-center border outline-none size-8 focus-visible:border-primary border-secondary"
       @click="editor.chain().focus().toggleTaskList().run()"

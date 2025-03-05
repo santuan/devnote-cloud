@@ -32,6 +32,12 @@ export const useMagicKeysStore = defineStore("magic-keys", () => {
   const magic_toggle_preview = keys["ctrl+alt+p"]
   const magic_increase_font = keys["ctrl+shift+NumpadAdd"]
   const magic_decrease_font = keys["ctrl+shift+NumpadSubtract"]
+  const magic_task_list = keys["ctrl+shift+alt+l"]
+
+  whenever(magic_task_list, () => {
+    editor.value.chain().focus().toggleTaskList().run()
+    console.log("holis")
+  })
 
   whenever(magic_increase_font, () => {
     toggleFontSize("increase")
