@@ -94,7 +94,7 @@ onMounted(() => {
       TextStyle.configure({ types: [ListItem.name] }),
       TaskList,
       TaskItem.configure({
-        nested: true,
+        nested: false,
       }),
       ResizableMedia,
       // Image.configure({
@@ -532,6 +532,10 @@ html.dark .shiki span {
   /* cursor: pointer; */
   height: 0;
   width: 0;
+
+}
+.tiptap ul[data-type="taskList"] li:focus-within span {
+  @apply !bg-primary/40 border-primary/10
 }
 
 /* Style the custom checkbox container */
@@ -541,7 +545,7 @@ html.dark .shiki span {
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  @apply bg-primary/10 border-primary/50 border-2 -translate-y-[1px];
+  @apply bg-primary/10 border-primary/50 border-2 -translate-y-[1px] ;
   /* border: 2px solid #ccc; */
   /* cursor: pointer; */
   vertical-align: middle;
