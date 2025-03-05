@@ -591,7 +591,8 @@ html.dark .shiki span {
 
 /* Optional: Add a line-through style for checked items */
 .tiptap ul[data-type="taskList"] li[data-checked="true"] div p {
-  text-decoration: line-through;
-  color: #888;
+  /* text-decoration: line-through; */
+  /* color: #888; */
+  opacity: 0.3
 }
 </style>
