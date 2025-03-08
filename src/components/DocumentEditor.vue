@@ -40,6 +40,7 @@ const { t } = useI18n()
         </button>
       </div>
       <Editor
+        v-memo="[db_store.document_body]"
         v-model="db_store.document_body"
         :editable="!document.content_editable"
         :toolbar="show_editor_toolbar"
@@ -66,12 +67,6 @@ const { t } = useI18n()
       "
       class="hidden md:block fixed !select-none bottom-0 right-0 z-20 h-12 px-3 text-xs text-right left-0 GuardarDocumento disabled:text-foreground/50 focus:bg-primary/50"
     >
-      <kbd
-        v-show="!isMobile"
-        class="pointer-events-none uppercase inline-flex h-6 mr-3 [:disabled_&]:!text-foreground/70 scale-75 origin-right select-none items-center gap-1 rounded bg-primary/20 px-1.5 font-mono text-xs text-primary-foreground font-extrabold opacity-100"
-      >
-        ctrl enter
-      </kbd>
       {{ t("editor.save") }}
     </button>
   </div>

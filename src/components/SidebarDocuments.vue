@@ -31,6 +31,7 @@ const { focus_documents } = storeToRefs(focus)
       >
         {{ t("commandBar.documents") }}
         <NumberFlow
+          v-memo="[allItemsTodo?.length]"
           class="bg-primary font-mono font-bold text-primary-foreground size-4 rounded flex justify-center items-center"
           :value="`${allItemsTodo ? allItemsTodo?.length : 0}`"
         />
@@ -40,7 +41,7 @@ const { focus_documents } = storeToRefs(focus)
         class="shrink-0 flex justify-end gap-1 opacity-60 text-xs text-foreground"
       >
         <kbd class="bg-background px-1">
-          ctrl 
+          ctrl
           <span class="opacity-30">+</span>
           shift
           <span class="opacity-30">+</span>
@@ -70,8 +71,8 @@ const { focus_documents } = storeToRefs(focus)
             class="py-1 px-0.5 flex flex-col justify-start items-start relative gap-1 w-full min-h-24"
             v-if="allItemsTodo"
           >
-            <SearchItem v-for="item in allItemsTodo" :key="item.id" :data="item" />
-            <SearchItemChecked v-for="item in allItemsChecked" :key="item.id" :data="item" />
+            <SearchItem v-memo="[allItemsTodo]" v-for="item in allItemsTodo" :key="item.id" :data="item" />
+            <SearchItemChecked v-memo="[allItemsChecked]" v-for="item in allItemsChecked" :key="item.id" :data="item" />
           </div>
           <div
             v-if="allItemsTodo?.length + allItemsChecked?.length === 0"
@@ -83,7 +84,7 @@ const { focus_documents } = storeToRefs(focus)
           </div>
         </ScrollAreaViewport>
         <ScrollAreaScrollbar
-          class="flex select-none touch-none p-0.5 bg-secondary transition-colors hover:bg-background data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:h-2.5"
+          class="flex select-none touch-none p-0.5 bg-secondary hover:bg-background data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:h-2.5"
           orientation="vertical"
         >
           <ScrollAreaThumb

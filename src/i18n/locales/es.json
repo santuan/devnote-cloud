@@ -6,6 +6,7 @@
   "editor": {
     "placeholder": "Escribir algo...",
     "untitled": "Documento sin título",
+    "CtrlEnterCreate": "ctrl enter para crear",
     "save": "Crear documento",
     "delete": "Eliminar documento",
     "deleteConfirm": "Esta acción no tiene vuelta atrás",
@@ -78,6 +79,7 @@
     "mouseKeyboard": "mouse y teclado",
     "theme": "Tema",
     "themeDescription": "Alterná entre modo oscuro/claro/sistema, tambien podes elegir un color primario.",
+    "selectPrimaryColor": "Seleccionar color primario",
     "light": "Claro",
     "dark": "Oscuro",
     "system": "Sistema",

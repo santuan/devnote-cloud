@@ -25,9 +25,6 @@ const toggleFontSize = (size) => {
   appFontSize.value = size
 }
 
-onMounted(() => {
-  toggleFontSize(appFontSize.value)
-})
 </script>
 
 <template>

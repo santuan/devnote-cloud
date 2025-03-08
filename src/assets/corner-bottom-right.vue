@@ -16,8 +16,11 @@
 
 
 <style>
+
 button[data-state="open"] .CornerBottomRight {
-  @apply fill-primary !right-1 !bottom-1;
+  fill: hsl(var(--primary));
+  right: 0.25rem /* 4px */ !important;
+  bottom: 0.25rem /* 4px */ !important;
 }
 
 </style>

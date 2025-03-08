@@ -38,7 +38,7 @@ import { ResizableMedia } from "./resizableMedia"
 import mediumZoom from "medium-zoom/dist/pure"
 import "medium-zoom/dist/style.css"
 import History from "@tiptap/extension-history"
-import { onMounted, onBeforeUnmount } from "vue"
+import { onMounted, onBeforeUnmount, watchEffect } from "vue"
 import { useDatabaseStore } from "@/stores/database"
 import { useEditorStore } from "@/stores/editor"
 import { useDocumentStore } from "@/stores/document"
@@ -47,13 +47,16 @@ import { storeToRefs } from "pinia"
 import { Editor, EditorContent, VueNodeViewRenderer } from "@tiptap/vue-3"
 import { useI18n } from "vue-i18n"
 import EditorContextMenu from "./EditorContextMenu.vue"
-const settings = useSettingsStore()
 const db_store = useDatabaseStore()
 const document = useDocumentStore()
 const editor_store = useEditorStore()
 const { editor } = storeToRefs(editor_store)
 const { content_editable } = storeToRefs(document)
 const { t } = useI18n()
+const { document_name, document_body } = storeToRefs(db_store)
+watchEffect(() => {
+  if (document_name.value || document_body.value) db_store.auto_save()
+})
 
 const emit = defineEmits(["update:modelValue"])
 const props = defineProps({

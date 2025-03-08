@@ -9,10 +9,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuLabel,
 } from "reka-ui"
-import { computed, onMounted } from "vue"
 import { SunMedium, Moon } from "lucide-vue-next"
-import { useColorMode, useStorage, useFavicon, useDark } from "@vueuse/core"
-import { useDocumentStore } from "@/stores/document"
+import { useColorMode } from "@vueuse/core"
+import { useToggleColorTheme } from "@/composables/useToggleColorTheme"
 import { useI18n } from "vue-i18n"
 import Tooltip from "@/components/ui/Tooltip.vue"
 import CornerBottomRight from "@/assets/corner-bottom-right.vue"
@@ -25,31 +24,9 @@ const props = defineProps({
   },
 })
 
-const document_store = useDocumentStore()
 const mode = useColorMode()
-const isDark = useDark()
-const colorTheme = useStorage("theme", "theme-forground")
 const { t } = useI18n()
 
-const favicon = computed(() => {
-  const theme = colorTheme.value.replace("theme-", "")
-  return isDark.value ? `${theme}-dark.png` : `${theme}-light.png`
-})
-
-useFavicon(favicon, {
-  baseUrl: "/",
-  rel: "icon",
-})
-
-const toggleColorTheme = (theme) => {
-  document.body.classList.remove(colorTheme.value)
-  document.body.classList.add(theme)
-  colorTheme.value = theme
-}
-
-onMounted(() => {
-  toggleColorTheme(colorTheme.value)
-})
 </script>
 
 <template>
@@ -57,14 +34,13 @@ onMounted(() => {
     <DropdownMenuTrigger class="interactive relative group">
       <Tooltip
         :name="t('settings.theme')"
-        :side="document_store.show_sidebar_documents ? 'bottom' : 'right'"
         :align="'end'"
       >
         <span
           class="flex items-center justify-center border hover:bg-secondary/80 border-secondary group-data-[state=open]:text-primary bg-background size-8"
         >
-          <Moon class="transition-all scale-0 rotate-0 size-4 dark:scale-100" />
-          <SunMedium class="absolute transition-all rotate-90 size-4 scale-100 dark:scale-0" />
+          <Moon class="scale-0 rotate-0 size-4 dark:scale-100" />
+          <SunMedium class="absolute rotate-90 size-4 scale-100 dark:scale-0" />
           <span class="sr-only">{{ t("settings.themeDescription") }}</span>
         </span>
         <CornerBottomRight />
@@ -76,6 +52,7 @@ onMounted(() => {
         :side="props.side"
         :side-offset="5"
         :align="'center'"
+        v-memo="[mode]"
       >
         <DropdownMenuGroup class="grid grid-cols-3">
           <DropdownMenuItem
@@ -101,73 +78,42 @@ onMounted(() => {
         <DropdownMenuLabel
           class="px-3 flex gap-2 pt-2 justify-center text-xs text-center text-foreground/80"
         >
-          Primary Color:
-          <span class="text-primary">{{ colorTheme }}</span>
+        {{ t("settings.selectPrimaryColor") }}
         </DropdownMenuLabel>
         <DropdownMenuGroup class="flex justify-evenly my-2 gap-0 items-center w-full p-1">
           <DropdownMenuItem
-            @click="toggleColorTheme('theme-rose')"
+            @click="useToggleColorTheme('theme-rose')"
             class="outline-none size-5 bg-rose-500 data-[highlighted]:!opacity-100 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
-            :class="
-              colorTheme === 'theme-rose' ?
-                ' !ring-primary/80 !bg-primary/10 ring-4 !ring-offset-0 !opacity-100'
-              : ''
-            "
           >
             <span class="sr-only">{{ t("settings.theme") }} rose</span>
           </DropdownMenuItem>
           <DropdownMenuItem
-            @click="toggleColorTheme('theme-blue')"
+            @click="useToggleColorTheme('theme-blue')"
             class="bg-blue-500 outline-none data-[highlighted]:!opacity-100 size-5 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
-            :class="
-              colorTheme === 'theme-blue' ?
-                ' !ring-primary/80 !bg-primary/10 ring-4 !ring-offset-0 !opacity-100'
-              : ''
-            "
           >
             <span class="sr-only">{{ t("settings.theme") }} blue</span>
           </DropdownMenuItem>
           <DropdownMenuItem
-            @click="toggleColorTheme('theme-green')"
+            @click="useToggleColorTheme('theme-green')"
             class="bg-green-500 outline-none data-[highlighted]:!opacity-100 size-5 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
-            :class="
-              colorTheme === 'theme-green' ?
-                ' !ring-primary/80 !bg-primary/10 !ring-4 !ring-offset-0 !opacity-100'
-              : ''
-            "
           >
             <span class="sr-only">{{ t("settings.theme") }} green</span>
           </DropdownMenuItem>
           <DropdownMenuItem
-            @click="toggleColorTheme('theme-yellow')"
+            @click="useToggleColorTheme('theme-yellow')"
             class="bg-yellow-500 outline-none data-[highlighted]:!opacity-100 size-5 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
-            :class="
-              colorTheme === 'theme-yellow' ?
-                ' !ring-primary/80 !bg-primary/10 ring-4 !ring-offset-0 !opacity-100'
-              : ''
-            "
           >
             <span class="sr-only">{{ t("settings.theme") }} yellow</span>
           </DropdownMenuItem>
           <DropdownMenuItem
-            @click="toggleColorTheme('theme-violet')"
+            @click="useToggleColorTheme('theme-violet')"
             class="outline-none data-[highlighted]:!opacity-100 size-5 bg-violet-500 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
-            :class="
-              colorTheme === 'theme-violet' ?
-                ' !ring-primary/80 !bg-primary/10 ring-4 !ring-offset-0 !opacity-100'
-              : ''
-            "
           >
             <span class="sr-only">{{ t("settings.theme") }} violet</span>
           </DropdownMenuItem>
           <DropdownMenuItem
-            @click="toggleColorTheme('theme-foreground')"
+            @click="useToggleColorTheme('theme-foreground')"
             class="!outline-none data-[highlighted]:!opacity-100 size-4 bg-foreground/90 hover:ring-4 focus-visible:ring-4 ring-foreground ring-offset-0 opacity-30"
-            :class="
-              colorTheme === 'theme-foreground' ?
-                ' !ring-primary/80 !bg-foreground/10 ring-4 !ring-offset-0 !opacity-100'
-              : ''
-            "
           >
             <span class="sr-only">{{ t("settings.theme") }} Foreground</span>
           </DropdownMenuItem>

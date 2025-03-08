@@ -6,6 +6,7 @@
   "editor": {
     "placeholder": "Start writing...",
     "untitled": "Untitled document",
+    "CtrlEnterCreate": "ctrl enter to create",
     "save": "Create document",
     "delete": "Delete document",
     "deleteConfirm": "This action cannot be undone",
@@ -78,6 +79,7 @@
     "mouseKeyboard": "mouse and keyboard",
     "theme": "Theme",
     "themeDescription": "Toggle between dark, light, or system mode; you can also choose a primary color.",
+    "selectPrimaryColor": "Select primary color",
     "light": "Light",
     "dark": "Dark",
     "system": "System",

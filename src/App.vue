@@ -1,21 +1,19 @@
 <script setup lang="ts">
-import { storeToRefs } from "pinia"
-import { useDatabaseStore } from "@/stores/database"
 import { useStorage } from "@vueuse/core"
-import { watchEffect } from "vue"
+import { onMounted } from "vue"
 import Document from "@/components/Document.vue"
 import PullToRefresh from "@/components/ui/PullToRefresh.vue"
 import Sidebar from "@/components/Sidebar.vue"
 import Toasts from "@/components/ui/Toasts.vue"
+import { useToggleColorTheme } from "@/composables/useToggleColorTheme"
 
-
-const db_store = useDatabaseStore()
+const colorTheme = useStorage("theme", "theme-forground")
 const cursor_pointer = useStorage("cursor", true)
-const { document_name, document_body } = storeToRefs(db_store)
 
-watchEffect(() => {
-  if (document_name.value || document_body.value) db_store.auto_save()
+onMounted(() => {
+  useToggleColorTheme(colorTheme.value)
 })
+
 </script>
 
 <template>
@@ -36,27 +34,45 @@ watchEffect(() => {
 <style>
 
 .dxc-login-dlg > div:first-child {
-  @apply !bg-background !opacity-90;
+  background-color: hsl(var(--background)) !important;
+  opacity: 0.9 !important;
 }
 
 .dxc-login-dlg div div {
-  @apply !bg-background grid gap-3 !shadow-none !text-foreground !text-sm !font-mono !max-w-sm !border-primary;
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--primary)) !important;
+  display: grid;
+  gap: 0.75rem;
+  --tw-shadow: 0 0 #0000 !important;
+  --tw-shadow-colored: 0 0 #0000 !important;
+  font-size: 0.875rem /* 14px */ !important;
+  line-height: 1.25rem /* 20px */ !important;
+  font-family: JetBrains Mono Variable, monospace !important;
+  max-width: 24rem /* 384px */ !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
 .dxc-login-dlg div div input {
-  @apply !bg-secondary !text-foreground text-center !text-sm !font-mono;
+  background-color: hsl(var(--secondary)) !important;
+  border-color: hsl(var(--primary)) !important;
+  color: hsl(var(--foreground)) !important;
+  text-align: center;
+  font-size: 0.875rem /* 14px */ !important;
+  line-height: 1.25rem /* 20px */ !important;
+  font-family: JetBrains Mono Variable, monospace !important;
 }
 
 .dxc-login-dlg div div div {
-  @apply grid-cols-2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .dxc-login-dlg div div h3 {
-  @apply text-center;
+  text-align: center;
 }
 
 .dxc-login-dlg div div p {
-  @apply text-center;
+  text-align: center;
 }
 
 .dxc-login-dlg div form label {
@@ -64,11 +80,14 @@ watchEffect(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @apply text-primary;
+  color: hsl(var(--primary));
 }
 
 .dxc-login-dlg div form label input[type="otp"] {
-  @apply -translate-y-5 !h-14;
+  height: 3.5rem /* 56px */ !important;
+  --tw-translate-y: -1.25rem /* -20px */;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+
 }
 
 .dxc-login-dlg div div div button {
@@ -76,6 +95,6 @@ watchEffect(() => {
 }
 
 .dxc-login-dlg div p {
-  @apply !text-foreground;
+  color: hsl(var(--foreground)) !important;
 }
 </style>

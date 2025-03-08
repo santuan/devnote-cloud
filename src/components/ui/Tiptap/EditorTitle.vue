@@ -7,6 +7,8 @@ import { Heading } from "lucide-vue-next"
 import { useFocusStore } from "@/stores/focus"
 import { useDocumentStore } from "@/stores/document"
 import CornerBottomRight from "@/assets/corner-bottom-right.vue"
+import { useIsMobile } from "@/composables/useIsMobile"
+const { isMobile } = useIsMobile()
 
 const focus = useFocusStore()
 const document = useDocumentStore()
@@ -28,6 +30,13 @@ const { t } = useI18n()
       style="field-sizing: content"
       class="w-full pr-8 px-2 py-0.5 overflow-hidden ring-1 outline-none resize-none leading-8 max-h-9 md:max-h-auto min-h-8 TextareaProjectName bg-secondary/30 text-foreground ring-secondary focus-within:ring-primary placeholder:text-primary/50 hover:ring-primary ring-inset focus:max-h-full line-clamp-1 focus:overflow-visible focus:line-clamp-none"
     />
+    <kbd
+      v-show="!db_store.loaded_id"
+      v-if="!isMobile"
+      class="pointer-events-none group-focus-within:opacity-100 opacity-0 top-2.5 uppercase absolute right-9 inline-flex h-6 mr-3  scale-75 origin-right select-none items-center gap-1 rounded bg-primary/20 px-1.5 font-mono text-xs text-primary font-extrabold"
+    >
+      {{t('editor.CtrlEnterCreate')}}
+    </kbd>
     <Tooltip
       name="Toggle Toolbar"
       :side="'bottom'"

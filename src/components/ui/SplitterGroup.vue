@@ -17,16 +17,6 @@ whenever(magicExpandDocument, (n) => {
   if (n) expandAllScreen()
 })
 
-// function expandAllScreen() {
-//   if (panelRef.value.isCollapsed) {
-//     panelRef.value.expand()
-//   } else {
-//     panelRef.value.collapse()
-//   }
-//   if (ExpandAll.value === true) {
-//     document.show_sidebar_documents = !document.show_sidebar_documents
-//   }
-// }
 
 function expandAllScreen() {
   if (panelRef.value.getSize() <= 3) {

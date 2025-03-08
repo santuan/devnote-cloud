@@ -475,10 +475,10 @@ nav a.router-link-exact-active {
 [data-reka-popper-content-wrapper] {
   z-index: 9999 !important;
 }
-
+/* 
 [data-disabled] {
   @apply opacity-60;
-}
+} */
 
 [data-sonner-toast] {
   @apply !items-start !gap-3 font-mono text-xs;
