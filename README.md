@@ -1,6 +1,6 @@
-`Status playground - Disclaimer: I'm learning Vue. That said - Feel free to use it for testing and learning purposes.`
+`Status playground - Disclaimer: I'm learning Vue and not a native english speaker. That said - Feel free to use it for testing and learning purposes.`
 
-_See [another version with import and export](#another-version-with-import-and-export)_
+_See [another version of the same app but you can import and export DB to a json file](#another-version-with-import-and-export)_
 
 ## Intro
 
@@ -23,7 +23,7 @@ This version use `Dexie Cloud` for logging with OTP and as a sync engine. The da
 
 **Disclaimer**: This is beyond my understanding.
 
-Get your `databaseUrl`, `clientId` and `clientSecret`. [More information in the Dexie documentation](https://dexie.org/cloud/#getting-started).
+Get your `databaseUrl`, `clientId` and `clientSecret`. [Follow the awesome Dexie documentation](https://dexie.org/cloud/#getting-started) it's pretty straight forward.
 
 ### Create a file `dexie-cloud.json`
 
@@ -45,13 +45,14 @@ Get your `databaseUrl`, `clientId` and `clientSecret`. [More information in the 
 }
 ```
 
-### Edit `db.ts` inside `/src` and replace with your database url.
+### Edit `.env.example` and rename it to `.env`. Replace with your database url.
 
-```ts
-db.cloud.configure({
-  databaseUrl: "https://[[your_database_url]].dexie.cloud",
-  requireAuth: true, // optional
-})
+it looks something like this
+
+https://[your-dexie-cloud-url-here].dexie.cloud
+
+```env
+VITE_DBURL=your_dexie_cloud_url
 ```
 
 ### Don forget to whitelist your app origin(s).
