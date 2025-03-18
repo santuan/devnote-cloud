@@ -1,14 +1,14 @@
-import { useStorage } from '@vueuse/core'
-import { createI18n } from 'vue-i18n'
-import en from './locales/en.json'
-import es from './locales/es.json'
+import { useStorage } from "@vueuse/core"
+import { createI18n } from "vue-i18n"
+import en from "./locales/en.json"
+import es from "./locales/es.json"
 
-const locale = useStorage('locale', 'en')
+const locale = useStorage("locale", "en")
 
 export const i18n = createI18n({
   legacy: false,
   locale: locale.value,
-  fallbackLocale: 'en',
+  fallbackLocale: "en",
 
   messages: {
     es,
