@@ -1,4 +1,4 @@
-import { ref, shallowRef } from "vue"
+import { shallowRef } from "vue"
 import { defineStore } from "pinia"
 import { useDocumentStore } from "@/stores/document"
 

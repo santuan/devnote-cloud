@@ -102,7 +102,7 @@ export default {
     copyToClipboard(successful = () => null, failure = () => null) {
       const clipboard = navigator.clipboard
       const value = this.node.content.content[0].text
-      if (clipboard !== undefined && clipboard !== undefined) {
+      if (clipboard !== undefined) {
         navigator.clipboard.writeText(value).then(successful, failure)
         this.copyText = "Copied"
       } else {

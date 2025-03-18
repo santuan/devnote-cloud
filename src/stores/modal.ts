@@ -9,6 +9,9 @@ export const useModalStore = defineStore("modal", () => {
   const show_commandbar = shallowRef(false)
   const show_delete_db_modal = shallowRef(false)
   const show_delete_document_modal = shallowRef(false)
+  const show_video_url_dialog = shallowRef(false)
+  const show_image_url_dialog = shallowRef(false)
+  const show_youtube_url_dialog = shallowRef(false)
 
   return {
     show_info,
@@ -18,5 +21,8 @@ export const useModalStore = defineStore("modal", () => {
     show_commandbar,
     show_delete_db_modal,
     show_delete_document_modal,
+    show_video_url_dialog,
+    show_image_url_dialog,
+    show_youtube_url_dialog,
   }
 })

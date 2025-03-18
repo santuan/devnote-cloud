@@ -1,9 +1,7 @@
 import { useDatabaseStore } from "@/stores/database"
-import { useModalStore } from "@/stores/modal"
 
 export function useUnsavedChanges() {
   const db_store = useDatabaseStore()
-  const modal = useModalStore()
 
   const hasUnsavedChanges = () => {
     if (db_store.document_body === "<p></p>") {

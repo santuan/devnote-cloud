@@ -9,24 +9,24 @@ import {
   ContextMenuTrigger,
 } from "reka-ui"
 
-import { useSettingsStore } from "@/stores/settings"
+import { useI18n } from "vue-i18n"
 import { useEditorStore } from "@/stores/editor"
 import { storeToRefs } from "pinia"
-import { useI18n } from "vue-i18n"
-import { useAddImage } from "@/composables/useAddImage"
-import { useAddVideo } from "@/composables/useAddVideo"
-import { useSetVideo } from "@/composables/useSetVideo"
-import { useAddImageBase64 } from "@/composables/useAddImageBase64"
 import { useDocumentStore } from "@/stores/document"
 
-const settings = useSettingsStore()
 const document = useDocumentStore()
 const editor_store = useEditorStore()
 const { editor } = storeToRefs(editor_store)
-const { addImage } = useAddImage(editor)
-const { addVideo } = useAddVideo(editor)
-const { setVideo } = useSetVideo(editor)
-const { addImageBase64 } = useAddImageBase64(editor)
+// import { useSettingsStore } from "@/stores/settings"
+// import { useAddImage } from "@/composables/useAddImage"
+// import { useAddVideo } from "@/composables/useAddVideo"
+// import { useSetVideo } from "@/composables/useSetVideo"
+// import { useAddImageBase64 } from "@/composables/useAddImageBase64"
+// const settings = useSettingsStore()
+// const { addImage } = useAddImage(editor)
+// const { addVideo } = useAddVideo(editor)
+// const { setVideo } = useSetVideo(editor)
+// const { addImageBase64 } = useAddImageBase64(editor)
 const { t } = useI18n()
 </script>
 
@@ -41,7 +41,7 @@ const { t } = useI18n()
         class="min-w-[220px] z-10 font-mono bg-background ring-1 ring-primary text-foreground outline-none rounded p-1.5 shadow"
         :side-offset="5"
       >
-        <ContextMenuItem
+        <!-- <ContextMenuItem
           @click="addVideo"
           class="cursor-default text-xs flex items-center h-6 px-2 hover:bg-primary/20 outline-none disabled:cursor-not-allowed disabled:text-gray-400 data-[highlighted]:bg-primary/20"
           :value="t('verb.add')"
@@ -94,7 +94,7 @@ const { t } = useI18n()
             @change="addImageBase64"
           />
         </ContextMenuItem>
-        <ContextMenuSeparator class="h-[0.0125rem] bg-secondary my-1" />
+        <ContextMenuSeparator class="h-[0.0125rem] bg-secondary my-1" /> -->
         <ContextMenuLabel class="text-xs px-2 text-primary relative inline-block uppercase py-2">
           {{ t("toolbar.table") }}
         </ContextMenuLabel>

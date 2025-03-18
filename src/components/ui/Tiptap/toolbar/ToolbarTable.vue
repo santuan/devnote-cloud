@@ -130,6 +130,13 @@ const { t } = useI18n()
         >
           {{ t("toolbar.splitCell") }}
         </DropdownMenuItem>
+        <!-- <DropdownMenuItem
+          @click="editor.chain().focus().fixTables().run()"
+          class="cursor-default flex items-center justify-between gap-2 p-2 pr-3 outline-none focus-visible:bg-primary/30 text-xs hover:bg-primary/20"
+          :disabled="!editor.can().fixTables()"
+        >
+          Fix Tables
+        </DropdownMenuItem> -->
       </DropdownMenuContent>
     </DropdownMenuPortal>
   </DropdownMenuRoot>
